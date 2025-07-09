@@ -14,7 +14,7 @@ const hero = Syne({
   subsets:['latin']
 })
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowUp, ArrowRight, CalendarCheck } from 'lucide-react';
 const herofont = Bebas_Neue({
   weight:"400",
@@ -83,20 +83,26 @@ export default function HeroSection() {
       Three concepts in one day
     </motion.div>
 
-    <motion.h1
+  <motion.h1
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.8 }}
-      className={`${herofont.className} text-5xl sm:text-8xl md:text-5xl lg:text-7xl tracking-tight font-extrabold text-left sm:text-center`}
+      className={`${herofont.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight font-extrabold text-center`}
     >
-      The First Choice in{' '}
-      <br className='sm:hidden' />
-      <span className={`text-orange-500 ${herofont.className}`}>WHITE LABEL</span>
-      <br className='sm:hidden' />
-      <span className="block sm:inline"> Logo Design for <br className='sm:hidden' /> Agencies</span>
+      <div className="flex flex-col items-center">
+        <span className="block">The First Choice in</span>
+        
+        <div className="relative h-20 sm:h-24 md:h-28 lg:h-32 xl:h-36 flex items-center justify-center w-full">
+          <AnimatedWords 
+            words={["WHITE LABEL", "BRANDING", "DESIGN", "CREATIVE"]} 
+            textColor="text-orange-500"
+          />
+        </div>
+        
+        <span className="block">Logo Design for Agencies</span>
+      </div>
     </motion.h1>
-
     {/* Description */}
     <motion.p
       initial={{ opacity: 0 }}
@@ -178,3 +184,37 @@ export default function HeroSection() {
 </main>
   );
 }
+const AnimatedWords = ({ words, textColor }) => {
+  const [index, setIndex] = useState(0);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [words.length]);
+
+  return (
+    <span className={`relative inline-block ${textColor}`}>
+      {words.map((word, i) => (
+        <motion.span
+          key={word}
+          className="absolute left-0 top-0 w-full"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{
+            opacity: i === index ? 1 : 0,
+            y: i === index ? 0 : 20
+          }}
+          transition={{ 
+            duration: 0.5,
+            ease: "easeInOut"
+          }}
+        >
+          {word}
+        </motion.span>
+      ))}
+      {/* Invisible spacer to maintain layout */}
+      <span className="invisible">{words[0]}</span>
+    </span>
+  );
+};

@@ -17,20 +17,20 @@ const MarqueeStrip = () => {
   const messages = [
     {
       text: "100% Custom-Crafted by Creative Designers",
-      icon: <FaRegSmileWink className="text-purple-300" />
+      icon: <FaRegSmileWink className="text-orange-200" />
     },
     {
       text: "Less than 1% of applicants qualify to join our team.",
-      icon: <FaCoffee className="text-purple-300" />
+      icon: <FaCoffee className="text-orange-200" />
     },
     {
       text: "100% Custom-Crafted by Creative Designers",
-      icon: <FaHeart className="text-purple-300" />
+      icon: <FaHeart className="text-orange-200" />
     }
   ]
 
   return (
-    <div className="relative bg-[#d038ffd9] mt-36 border-t border-b border-purple-900/30 py-4 overflow-hidden">
+    <div className="relative bg-orange-500 mt-36 border-t border-b border-orange-900/30 py-4 overflow-hidden">
       <motion.div 
         className={`flex ${herofont.className}`}
         animate={{
