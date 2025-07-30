@@ -36,7 +36,7 @@ export default function Navbar() {
 
   return (
     <div className="w-full flex justify-center">
-      <header className="w-full max-w-5xl backdrop-blur-md rounded-full m-4 bg-[#45434500] px-4 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between shadow-xl border-b border-orange-900/30">
+      <header className="w-full max-w-6xl backdrop-blur-md rounded-full m-4 bg-[#45434500] px-4 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between shadow-xl border-b border-orange-900/30">
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
@@ -57,19 +57,19 @@ export default function Navbar() {
             onClick={() => scrollToSection('how-it-works')}
             className="text-zinc-400 hover:text-white transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400"
           >
-          About Us
+         Design Philosophy
           </button>
           <button
             onClick={() => scrollToSection('portfolio')}
             className="text-orange-400 hover:text-white transition-colors duration-200 font-semibold hover:underline underline-offset-4 decoration-orange-400"
           >
-            Portfolio
+         Logo Showcase
           </button>
           <button
             onClick={() => scrollToSection('pricing')}
             className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400"
           >
-            Pricing
+            Design Plans
           </button>
           <button
             onClick={() => scrollToSection('faq')}

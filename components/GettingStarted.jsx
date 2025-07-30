@@ -29,18 +29,21 @@ const GettingStarted = ({ id }) => {
   const steps = [
     {
      
-      description: "Just choose a plan, place your logo order and submit your brief through our form at checkout.",
-      icon:  <FaWandMagicSparkles />
+      description: "Pick a logo plan and share your brand brief at checkout — no calls, no delays.",
+      icon:  <FaWandMagicSparkles />,
+      head: "Choose Your Package"
     },
     {
      
-      description: "A dedicated designer will be assigned to your project right away",
-      icon: <FaPenNib />
+      description: "A pro designer is assigned instantly and begins crafting your custom concepts.",
+      icon: <FaPenNib />,
+      head:"We Get to Work"
     },
     {
       
-      description: "Within 24 hours you'll receive three custom logo concepts in your Solvance portal for review and feedback",
-      icon: <FaHandHolding />
+      description: "Get 3 unique logo concepts in 24 hours. Review, give feedback, and finalize with ease.",
+      icon: <FaHandHolding />,
+      head:"Review & Refine"
     }
   ];
 
@@ -68,7 +71,7 @@ const GettingStarted = ({ id }) => {
             viewport={{ once: true }}
             className={`text-6xl md:text-6xl uppercase font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-white ${font1.className}`}
           >
-            Getting Started Is<br /> <span className='text-orange-400'>Simple!</span>
+           LAUNCHING YOUR LOGO IS<br /> <span className='text-orange-400'>EASY!</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -87,6 +90,7 @@ const GettingStarted = ({ id }) => {
                 >
                   {step.icon}
                 </motion.div>
+                <h1 className=' className={`text-xl font-semibold text-white mb-3 ${font1.className}`}'>{step.head}</h1>
                 <h3 className={`text-xl font-semibold text-white mb-3 ${font1.className}`}>
                   {step.title}
                 </h3>

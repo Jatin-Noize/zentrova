@@ -90,7 +90,7 @@ export default function LogoMarquee({ id }) {
                   src={logo}
                   alt={`logo-${i}`}
                   fill
-                  className="object-scale-down border bg-gradient-to-b from-[#1a0033] to-[#2a004d] rounded-3xl border-orange-900/30 shadow-lg shadow-orange-900/50"
+               className="object-scale-down border bg-gradient-to-b from-[#120700] via-[#331400] to-[#120700] rounded-3xl border-orange-700/40 shadow-lg shadow-orange-700/40"
                   sizes="(max-width: 1000px) 420px, 612px"
                 />
               </div>
@@ -119,7 +119,7 @@ export default function LogoMarquee({ id }) {
                   src={logo}
                   alt={`logo-${i}`}
                   fill
-                  className="object-scale-down border bg-gradient-to-b from-[#1a0033] to-[#2a004d] rounded-3xl border-orange-500/30 shadow-lg shadow-orange-900/50"
+              className="object-scale-down border bg-gradient-to-b from-[#120700] via-[#331400] to-[#120700] rounded-3xl border-orange-700/40 shadow-lg shadow-orange-700/40"
                   sizes="(max-width: 1000px) 420px, 612px"
                 />
               </div>

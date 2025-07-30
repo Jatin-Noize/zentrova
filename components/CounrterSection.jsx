@@ -100,17 +100,17 @@ const CounterSection = () => {
           <CounterItem
             value={400}
             suffix="+"
-            title={"Successfully completed\n150+ logo projects worldwide"}
+            title={"Logos delivered to agencies & startups worldwide"}
           />
           <CounterItem
             value={100}
             suffix="%"
-            title={"Crafted by\nProfessional Designers"}
+            title={"Crafted by expert logo designers — no templates, ever"}
           />
           <CounterItem
             value={24}
             suffix="H"
-            title={"Delivery starting\nonce your brief submitted"}
+            title={"First concepts ready within 24 hours of your brief"}
           />
         </div>
       </div>

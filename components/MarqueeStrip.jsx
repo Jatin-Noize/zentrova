@@ -1,81 +1,89 @@
 'use client'
 import { motion } from 'framer-motion'
-import { FaHeart, FaCoffee, FaRegSmileWink } from 'react-icons/fa'
-import { Bebas_Neue, Michroma,Oswald} from "next/font/google"
+import { Bebas_Neue } from "next/font/google"
 
 const herofont = Bebas_Neue({
   weight: "400",
   subsets: ['latin']
 });
 
-const footer = Michroma({
-  weight: "400",
-  subsets: ['latin']
-}); 
-
 const MarqueeStrip = () => {
-  const messages = [
-    {
-      text: "100% Custom-Crafted by Creative Designers",
-      icon: <FaRegSmileWink className="text-orange-200" />
-    },
-    {
-      text: "Less than 1% of applicants qualify to join our team.",
-      icon: <FaCoffee className="text-orange-200" />
-    },
-    {
-      text: "100% Custom-Crafted by Creative Designers",
-      icon: <FaHeart className="text-orange-200" />
-    }
-  ]
+  const crossingMessages = [
+    "White Label Logos for World-Class Agencies.",
+    "3 Bespoke Logo Concepts — Delivered in 24H"
+  ];
+
+  const RepeatingContent = ({ message }) => (
+    <div className="flex">
+      {[...Array(2)].map((_, index) => (
+        <div
+          key={index}
+          className="flex shrink-0 gap-12 px-8"
+        >
+          {Array(4).fill(message).map((text, i) => (
+            <span
+              key={i}
+              className="text-4xl text-white font-medium tracking-tight whitespace-nowrap"
+            >
+              {text}
+            </span>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
 
   return (
-    <div className="relative bg-orange-500 mt-36 border-t border-b border-orange-900/30 py-4 overflow-hidden">
-      <motion.div 
-        className={`flex ${herofont.className}`}
-        animate={{
-          x: ['0%', '-50%'], 
-        }}
-        transition={{
-          x: {
+    <div className="relative mt-36 overflow-hidden h-64">
+      {/* Diagonal 1 */}
+      <div className="absolute  inset-0 w-full h-full overflow-hidden rotate-15 origin-center">
+        <motion.div
+          className={`flex bg-orange-400 min-w-max ${herofont.className}`}
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{
             repeat: Infinity,
             repeatType: 'loop',
-            duration: 10,
-            ease: 'linear',
-          },
-        }}
-      >
-        {[...messages, ...messages].map((message, i) => (
-          <div 
-            key={i} 
-            className="flex items-center shrink-0 px-8"
-          >
-            <span className="mr-3 text-5xl">{message.icon}</span>
-            <span className="text-5xl text-purple-100 font-medium tracking-tight">
-              {message.text}
-            </span>
-          
+            duration: 20,
+            ease: 'linear'
+          }}
+        >
+          <RepeatingContent message={crossingMessages[0]} />
+        </motion.div>
+      </div>
+
+      {/* Diagonal 2 */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden -rotate-15 origin-center">
+        <motion.div
+          className={`flex min-w-max ${herofont.className}`}
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{
+            repeat: Infinity,
+            repeatType: 'loop',
+            duration: 18,
+            ease: 'linear'
+          }}
+        >
+          <div className="flex">
+            {[...Array(2)].map((_, index) => (
+              <div
+                key={index}
+                className="flex bg-orange-400 shrink-0 gap-12 px-8"
+              >
+                {Array(4).fill(crossingMessages[1]).map((text, i) => (
+                  <span
+                    key={i}
+                    className="text-4xl text-purple-100 bg-orange-400 font-medium tracking-tight whitespace-nowrap"
+                  >
+                    {text}
+                  </span>
+                ))}
+              </div>
+            ))}
           </div>
-        ))}
-      </motion.div>
-      
-      {/* Invisible duplicate for seamless looping */}
-      <div className={`absolute top-0 left-full  ${herofont.className}`}>
-        {messages.map((message, i) => (
-          <div 
-            key={`duplicate-${i}`} 
-            className="flex items-center shrink-0 px-8 opacity-0"
-          >
-            <span className="mr-3 text-5xl">{message.icon}</span>
-            <span className="text-5xl uppercase text-purple-100 font-medium tracking-tight">
-              {message.text}
-            </span>
-        
-          </div>
-        ))}
+        </motion.div>
       </div>
     </div>
   )
 }
 
-export default MarqueeStrip
+export default MarqueeStrip;

@@ -32,7 +32,7 @@ const AnimatedQuote = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.9, 1, 1, 0.9])
 
-  const text = "In today's competitive market, having a professional and memorable brand is more important than ever. At Solvance, our experienced designers with over 5 years in the industry create unique, modern logos that balance creativity with professionalism. We guarantee fast delivery within 24 hours, with packages starting at $225."
+  const text = "In a fast-moving digital world, a strong brand identity isn’t optional —it’s essential. At Zentrova, our seasoned designers (each with 5+ years of experience) deliver bold, custom logos that combine creativity with brand strategy. We specialize in fast, white-label delivery for agencies — with three unique concepts delivered in just 24 hours. Fixed pricing starts at $225 — no hidden fees, just powerful design"
 
   return (
     <div ref={ref} className="w-full py-12 px-4 flex justify-center">
