@@ -1,5 +1,6 @@
 'use client'
 import { motion } from 'framer-motion';
+import { IoMdCheckmarkCircle } from "react-icons/io";
 import Link from 'next/link';
 import ContactUsForm from "./ContactUsForm";
 
@@ -61,7 +62,7 @@ export default function HeroSection() {
 >
   THE GO-TO{' '}
   <br className='sm:hidden' />
-  <span className={`text-orange-500 ${herofont.className}`}>WHITE LABEL</span>
+  <span className={`text-[#F56F10] ${herofont.className}`}>WHITE LABEL</span>
   <br className='sm:hidden' />
   <span className="block sm:inline"> Logo Partner for  <br className='sm:hidden' />CREATIVE Agencies</span>
 </motion.h1>
@@ -81,6 +82,32 @@ export default function HeroSection() {
    three customconcepts, unlimited potential, all for a flat rate
   </span>
 </motion.p>
+ <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ delay: 0.6, duration: 0.8 }}
+    className={`${hero.className} mb-10 text-zinc-400 text-lg sm:text-xl text-left sm:text-center max-w-md sm:max-w-xl mx-auto`}
+  >
+    <ul className="space-y-3 sm:space-y-2">
+      <li className="flex items-center w-full gap-3 sm:justify-center sm:gap-2">
+        <IoMdCheckmarkCircle className='text-[#F56F10] h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0' />
+        <span>Made by real people, not AI</span>
+      </li>
+      <li className="flex items-center gap-3 sm:justify-center sm:gap-2">
+        <IoMdCheckmarkCircle className='text-[#F56F10] h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0' />
+        <span>Delivered in 48 hours</span>
+      </li>
+      <li className="flex items-center gap-3 sm:justify-center sm:gap-2">
+        <IoMdCheckmarkCircle className='text-[#F56F10] h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0' />
+        <span>Fully custom branding</span>
+      </li>
+      <li className="flex items-center gap-3 sm:justify-center sm:gap-2">
+        <IoMdCheckmarkCircle className='text-[#F56F10] h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0' />
+        <span>100% <span className="font-bold">MONEY-BACK</span> Guarantee</span>
+      </li>
+    </ul>
+  </motion.div>
 
     {/* CTA Buttons - Changed to justify-start on mobile */}
   <motion.div
@@ -93,7 +120,7 @@ export default function HeroSection() {
   {/* Pricing Button */}
   <button
     onClick={() => scrollToSection('pricing')}
-    className={`relative w-42 h-12 bg-orange-600 hover:bg-orange-700 transition-colors duration-200 text-white rounded-2xl text-sm font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-orange-500/20 whitespace-nowrap overflow-hidden ${button.className}`}
+    className={`relative w-42 h-12 bg-[#F56F10] hover:bg-orange-700 transition-colors duration-200 text-white rounded-2xl text-sm font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-orange-500/20 whitespace-nowrap overflow-hidden ${button.className}`}
     onMouseEnter={() => setIsHovered1(true)}
     onMouseLeave={() => setIsHovered1(false)}
   >

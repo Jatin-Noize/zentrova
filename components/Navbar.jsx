@@ -54,26 +54,32 @@ export default function Navbar() {
         {/* Desktop Navigation Links */}
         <nav className={`hidden md:flex text-lg font-serif items-center gap-8 font-medium ${navfont.className}`}>
           <button 
-            onClick={() => scrollToSection('how-it-works')}
-            className="text-zinc-400 hover:text-white transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400"
-          >
-         Design Philosophy
-          </button>
-          <button
             onClick={() => scrollToSection('portfolio')}
-            className="text-orange-400 hover:text-white transition-colors duration-200 font-semibold hover:underline underline-offset-4 decoration-orange-400"
+            className="text-zinc-400 hover:text-white transition-colors duration-200 hover:underline underline-offset-4 decoration-[#F56F10]"
           >
-         Logo Showcase
+        Portfolio
           </button>
           <button
             onClick={() => scrollToSection('pricing')}
-            className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400"
+            className="text-[#F56F10] hover:text-white transition-colors duration-200 font-semibold hover:underline underline-offset-4 decoration-[#F56F10]"
           >
-            Design Plans
+         Pricing
+          </button>
+          <button
+            onClick={() => scrollToSection('how-it-works')}
+            className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline underline-offset-4 decoration-[#F56F10]"
+          >
+           How It Works
+          </button>
+           <button
+            onClick={() => scrollToSection('faq')}
+            className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline underline-offset-4 decoration-[#F56F10]"
+          >
+            Testimonial
           </button>
           <button
             onClick={() => scrollToSection('faq')}
-            className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400"
+            className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline underline-offset-4 decoration-[#F56F10]"
           >
             FAQ
           </button>
@@ -91,7 +97,7 @@ export default function Navbar() {
           
           <button
             onClick={() => scrollToSection('pricing')}
-            className={`relative w-24   sm:w-32 bg-orange-600 hover:bg-orange-700 transition-colors duration-200 text-white  sm:px-8 py-2 sm:py-2.5 rounded-2xl text-sm font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-orange-500/20 whitespace-nowrap overflow-hidden ${button.className}`}
+            className={`relative w-24   sm:w-32 bg-[#F56F10] hover:bg-orange-700 transition-colors duration-200 text-white  sm:px-8 py-2 sm:py-2.5 rounded-2xl text-sm font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-orange-500/20 whitespace-nowrap overflow-hidden ${button.className}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             aria-label="View pricing plans"
@@ -157,7 +163,7 @@ export default function Navbar() {
             </button>
             <button
               onClick={() => scrollToSection('portfolio')}
-              className="text-orange-400 hover:text-white transition-colors duration-200 font-semibold py-3 w-full text-center border-b border-orange-900/30"
+              className="text-[#F56F10] hover:text-white transition-colors duration-200 font-semibold py-3 w-full text-center border-b border-orange-900/30"
             >
               Portfolio
             </button>

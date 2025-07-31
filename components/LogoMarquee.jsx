@@ -91,7 +91,7 @@ export default function LogoMarquee({ id }) {
                   alt={`logo-${i}`}
                   fill
                className="object-scale-down border bg-gradient-to-b from-[#120700] via-[#331400] to-[#120700] rounded-3xl border-orange-700/40 shadow-lg shadow-orange-700/40"
-                  sizes="(max-width: 1000px) 420px, 612px"
+                  sizes="(max-width: 1000px) 210px, 306px"
                 />
               </div>
             </motion.div>
@@ -99,7 +99,7 @@ export default function LogoMarquee({ id }) {
         </motion.div>
       </motion.div>
 
-      {/* Row 2 */}
+      {/* Row 2
       <motion.div
         ref={ref2}
         variants={fadeInUpWithBlur}
@@ -126,7 +126,7 @@ export default function LogoMarquee({ id }) {
             </motion.div>
           ))}
         </motion.div>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }

@@ -16,6 +16,8 @@ import Quote from '@/components/Quote';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import ContactUsForm from '@/components/ContactUsForm';
+import Founder from '@/components/Founder';
+import Portfolio from '@/components/Portfolio';
 
 // Animation variants
 const sectionVariants = {
@@ -127,7 +129,7 @@ const Page = () => {
         <link rel="canonical" href="https://yourwebsite.com/" />
       </Head>
 
-    <div className="min-h-screen bg-gradient-to-br from-orange-900 via-black to-orange-900 relative overflow-hidden">
+  <div className="min-h-screen bg-gradient-to-br from-[#F56F10] via-black to-[#F56F10] relative overflow-hidden">
 
         {/* Star container */}
         <div className="star-container absolute inset-0 overflow-hidden pointer-events-none"></div>
@@ -145,11 +147,14 @@ const Page = () => {
 
           {/* Animated Sections */}
           <AnimatedSection>
-            <LogoMarquee id="portfolio" />
+            <LogoMarquee id="#" />
           </AnimatedSection>
           
           <AnimatedSection>
             <CounterSection />
+          </AnimatedSection>
+            <AnimatedSection>
+           <Founder/>
           </AnimatedSection>
           
           <AnimatedSection>
@@ -162,6 +167,9 @@ const Page = () => {
           
           <AnimatedSection>
             <Quote />
+          </AnimatedSection>
+          <AnimatedSection>
+            <Portfolio id="portfolio"/>
           </AnimatedSection>
           
           <AnimatedSection>

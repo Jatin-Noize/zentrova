@@ -13,17 +13,17 @@ const MarqueeStrip = () => {
     "3 Bespoke Logo Concepts — Delivered in 24H"
   ];
 
-  const RepeatingContent = ({ message }) => (
+  const RepeatingContent = ({ message, textColor = "text-white", bgColor = "bg-orange-400" }) => (
     <div className="flex">
       {[...Array(2)].map((_, index) => (
         <div
           key={index}
-          className="flex shrink-0 gap-12 px-8"
+          className={`flex shrink-0 gap-12 px-8 ${bgColor}`}
         >
           {Array(4).fill(message).map((text, i) => (
             <span
               key={i}
-              className="text-4xl text-white font-medium tracking-tight whitespace-nowrap"
+              className={`text-4xl ${textColor} font-medium tracking-tight whitespace-nowrap ${herofont.className}`}
             >
               {text}
             </span>
@@ -35,10 +35,14 @@ const MarqueeStrip = () => {
 
   return (
     <div className="relative mt-36 overflow-hidden h-64">
-      {/* Diagonal 1 */}
-      <div className="absolute  inset-0 w-full h-full overflow-hidden rotate-15 origin-center">
+      {/* Diagonal Top-left to Bottom-right */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
         <motion.div
-          className={`flex bg-orange-400 min-w-max ${herofont.className}`}
+          className="flex min-w-max"
+          style={{
+            transform: 'rotate(15deg) translateX(-25%)',
+            transformOrigin: 'left center'
+          }}
           animate={{ x: ['0%', '-50%'] }}
           transition={{
             repeat: Infinity,
@@ -47,15 +51,23 @@ const MarqueeStrip = () => {
             ease: 'linear'
           }}
         >
-          <RepeatingContent message={crossingMessages[0]} />
+          <RepeatingContent 
+            message={crossingMessages[0]} 
+            bgColor="bg-orange-400"
+            textColor="text-white"
+          />
         </motion.div>
       </div>
 
-      {/* Diagonal 2 */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden -rotate-15 origin-center">
+      {/* Diagonal Top-right to Bottom-left */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
         <motion.div
-          className={`flex min-w-max ${herofont.className}`}
-          animate={{ x: ['0%', '-50%'] }}
+          className="flex min-w-max"
+          style={{
+            transform: 'rotate(-15deg) translateX(-25%)',
+            transformOrigin: 'right center'
+          }}
+          animate={{ x: ['-50%', '0%'] }}
           transition={{
             repeat: Infinity,
             repeatType: 'loop',
@@ -63,23 +75,11 @@ const MarqueeStrip = () => {
             ease: 'linear'
           }}
         >
-          <div className="flex">
-            {[...Array(2)].map((_, index) => (
-              <div
-                key={index}
-                className="flex bg-orange-400 shrink-0 gap-12 px-8"
-              >
-                {Array(4).fill(crossingMessages[1]).map((text, i) => (
-                  <span
-                    key={i}
-                    className="text-4xl text-purple-100 bg-orange-400 font-medium tracking-tight whitespace-nowrap"
-                  >
-                    {text}
-                  </span>
-                ))}
-              </div>
-            ))}
-          </div>
+          <RepeatingContent 
+            message={crossingMessages[1]} 
+            bgColor="bg-orange-500"
+            textColor="text-purple-100"
+          />
         </motion.div>
       </div>
     </div>
