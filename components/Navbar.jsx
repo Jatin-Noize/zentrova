@@ -72,7 +72,7 @@ export default function Navbar() {
            How It Works
           </button>
            <button
-            onClick={() => scrollToSection('faq')}
+            onClick={() => scrollToSection('testimonials')}
             className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline underline-offset-4 decoration-[#F56F10]"
           >
             Testimonial
@@ -159,7 +159,7 @@ export default function Navbar() {
               onClick={() => scrollToSection('how-it-works')}
               className="text-gray-300 hover:text-white transition-colors duration-200 py-3 w-full text-center border-b border-orange-900/30"
             >
-              About Us
+             How-It-Works
             </button>
             <button
               onClick={() => scrollToSection('portfolio')}
@@ -173,13 +173,20 @@ export default function Navbar() {
             >
               Pricing
             </button>
+                <button
+              onClick={() => scrollToSection('testimonials')}
+              className="text-gray-300 hover:text-white transition-colors duration-200 py-3 w-full text-center border-b border-orange-900/30"
+            >
+              Testimonials
+            </button>
+
             <button
               onClick={() => scrollToSection('faq')}
               className="text-gray-300 hover:text-white transition-colors duration-200 py-3 w-full text-center border-b border-orange-900/30"
             >
               FAQ
             </button>
-
+          
             {/* Mobile Action Button */}
             <button
               onClick={() => scrollToSection('pricing')}

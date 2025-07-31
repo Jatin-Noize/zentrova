@@ -1,8 +1,15 @@
 import React from 'react';
+import { Mina, Syne } from "next/font/google";
 
-const Founder = () => {
+const founder = Syne({
+  weight: "400",
+  subsets: ['latin']
+});
+
+const Founder = ({id}) => {
   return (
-    <div className="w-full flex justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+   <section id={id}>
+     <div className="w-full flex justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
        
       <div className="w-full max-w-4xl">
         <div className="relative bg-gradient-to-br from-black to-gray-900 rounded-xl overflow-hidden p-8 md:p-10 lg:p-12 mx-auto">
@@ -22,8 +29,8 @@ const Founder = () => {
               </svg>
               
               <div className="w-full">
-                <p className="text-white text-md md:text-xl lg:text-2xl font-medium leading-relaxed mb-6 text-center md:text-left">
-                  "Softriver designed an incredible brand in record time. No bloated process and endless meetings, just sharp, smart design with fast delivery and zero fluff."
+                <p className={`text-white text-md md:text-xl lg:text-2xl font-medium leading-relaxed mb-6 text-center md:text-left ${founder.className} `}>
+                  "Zentrova designed an incredible brand in record time. No bloated process and endless meetings, just sharp, smart design with fast delivery and zero fluff."
                 </p>
                 
                 <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
@@ -41,6 +48,8 @@ const Founder = () => {
         </div>
       </div>
     </div>
+
+   </section>
   );
 };
 

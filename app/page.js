@@ -1,23 +1,36 @@
 'use client'
 
 import Head from 'next/head';
-import Footer from '@/components/Footer';
-import HeroSection from '@/components/Hero';
-import Navbar from '@/components/Navbar';
-import React, { useEffect } from 'react';
-import LogoMarquee from '@/components/LogoMarquee';
-import CounterSection from '@/components/CounrterSection';
-import AnimatedQuote from '@/components/AnimatedQuote';
-import GettingStarted from '@/components/GettingStarted';
-import MarqueeStrip from '@/components/MarqueeStrip';
-import PricingComponent from '@/components/PricingComponent';
-import FAQSection from '@/components/FAQSection';
-import Quote from '@/components/Quote';
+import { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import ContactUsForm from '@/components/ContactUsForm';
-import Founder from '@/components/Founder';
-import Portfolio from '@/components/Portfolio';
+import dynamic from 'next/dynamic';
+
+// Lazy load components with dynamic imports
+const Navbar = dynamic(() => import('@/components/Navbar'), {
+  loading: () => <div className="h-16" />,
+  ssr: false
+});
+
+const HeroSection = dynamic(() => import('@/components/Hero'), {
+  loading: () => <div className="h-screen" />,
+  ssr: false
+});
+
+const LogoMarquee = dynamic(() => import('@/components/LogoMarquee'));
+const CounterSection = dynamic(() => import('@/components/CounrterSection'));
+const AnimatedQuote = dynamic(() => import('@/components/AnimatedQuote'));
+const GettingStarted = dynamic(() => import('@/components/GettingStarted'));
+const MarqueeStrip = dynamic(() => import('@/components/MarqueeStrip'));
+const PricingComponent = dynamic(() => import('@/components/PricingComponent'));
+const FAQSection = dynamic(() => import('@/components/FAQSection'));
+const Quote = dynamic(() => import('@/components/Quote'));
+const ContactUsForm = dynamic(() => import('@/components/ContactUsForm'));
+const Founder = dynamic(() => import('@/components/Founder'));
+const Portfolio = dynamic(() => import('@/components/Portfolio'));
+const HowItWorks = dynamic(() => import('@/components/HowItWorks'));
+const Testimonials = dynamic(() => import('@/components/Testimonials'));
+const Footer = dynamic(() => import('@/components/Footer'));
 
 // Animation variants
 const sectionVariants = {
@@ -44,15 +57,13 @@ const sectionVariants = {
 const AnimatedSection = ({ children, id }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.1
   });
 
   useEffect(() => {
     if (inView) {
       controls.start("visible");
-    } else {
-      controls.start("exit");
     }
   }, [controls, inView]);
 
@@ -72,10 +83,17 @@ const AnimatedSection = ({ children, id }) => {
 
 const Page = () => {
   useEffect(() => {
-    // Create stars
-    const stars = () => {
-      const count = 200;
+    // Create stars with requestAnimationFrame for better performance
+    const createStars = () => {
+      const count = 100; // Reduced number of stars
       const container = document.querySelector('.star-container');
+      
+      if (!container) return;
+      
+      // Clear existing stars
+      container.innerHTML = '';
+      
+      const fragment = document.createDocumentFragment();
       
       for (let i = 0; i < count; i++) {
         const star = document.createElement('div');
@@ -93,49 +111,59 @@ const Page = () => {
         star.style.animationDuration = `${5 + duration}s`;
         star.style.animationDelay = `${duration}s`;
         
-        container?.appendChild(star);
+        fragment.appendChild(star);
       }
+      
+      container.appendChild(fragment);
     };
     
-    stars();
+    requestAnimationFrame(createStars);
+    
+    // Cleanup function
+    return () => {
+      const container = document.querySelector('.star-container');
+      if (container) {
+        container.innerHTML = '';
+      }
+    };
   }, []);
 
   return (
     <>
       <Head>
-          
         <title>Zentrova | Powerful Solution for logo design</title>
-         
         <meta name="description" content="Discover our innovative solutions that help businesses grow faster. Explore our services, pricing, and portfolio. Get started today with our easy-to-use platform." />
-        <meta name="keywords" content="your, keywords, here, business, solution" />
+        <meta name="keywords" content="logo design, branding, creative design, business identity" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         
         {/* Open Graph / Facebook */}
-        <meta property="og:type" content="Logo Design Platform Website" />
-        <meta property="og:url" content="https://www.facebook.com/share/1ZAeAiroNY/?mibextid=wwXIfr" />
-        <meta property="og:title" content="Solvance | Powerful Solution for Your Needs" />
-        <meta property="og:description" content="Discover our innovative solutions that help businesses grow faster. Explore our services, pricing, and portfolio." />
-        <meta property="og:image" content="https://yourwebsite.com/images/og-image.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://zentrova.com/" />
+        <meta property="og:title" content="Zentrova | Professional Logo Design Services" />
+        <meta property="og:description" content="Premium logo design services that help businesses establish a strong brand identity." />
+        <meta property="og:image" content="https://zentrova.com/images/og-image.jpg" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://yourwebsite.com/" />
-        <meta property="twitter:title" content="Your Brand Name | Powerful Solution for Your Needs" />
-        <meta property="twitter:description" content="Discover our innovative solutions that help businesses grow faster. Explore our services, pricing, and portfolio." />
-        <meta property="twitter:image" content="https://yourwebsite.com/images/twitter-image.jpg" />
+        <meta property="twitter:url" content="https://zentrova.com/" />
+        <meta property="twitter:title" content="Zentrova | Professional Logo Design Services" />
+        <meta property="twitter:description" content="Premium logo design services that help businesses establish a strong brand identity." />
+        <meta property="twitter:image" content="https://zentrova.com/images/twitter-image.jpg" />
 
         {/* Canonical URL */}
-        <link rel="canonical" href="https://yourwebsite.com/" />
+        <link rel="canonical" href="https://zentrova.com/" />
+        
+        {/* Preload critical resources */}
+        <link rel="preload" href="/fonts/your-font.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </Head>
 
-  <div className="min-h-screen bg-gradient-to-br from-[#F56F10] via-black to-[#F56F10] relative overflow-hidden">
-
+      <div className="min-h-screen bg-gradient-to-br from-[#7d3a0b] via-black to-[#89400c] relative overflow-hidden">
         {/* Star container */}
         <div className="star-container absolute inset-0 overflow-hidden pointer-events-none"></div>
         
         {/* Main content container */}
-        <div className="flex flex-col jus items-center w-full scroll-smooth">
+        <div className="flex flex-col items-center w-full scroll-smooth">
           <div className="w-full z-50 fixed max-w-7xl px-4 sm:px-6 lg:px-8">
             <Navbar />
           </div>
@@ -153,23 +181,33 @@ const Page = () => {
           <AnimatedSection>
             <CounterSection />
           </AnimatedSection>
-            <AnimatedSection>
-           <Founder/>
+          
+          <AnimatedSection>
+            <Founder id="about" />
           </AnimatedSection>
           
           <AnimatedSection>
             <AnimatedQuote />
           </AnimatedSection>
           
-          <AnimatedSection className="flex justify-center">
-            <GettingStarted id="how-it-works" />
+          <AnimatedSection>
+            <GettingStarted />
           </AnimatedSection>
           
           <AnimatedSection>
             <Quote />
           </AnimatedSection>
+          
           <AnimatedSection>
-            <Portfolio id="portfolio"/>
+            <Portfolio id="portfolio" />
+          </AnimatedSection>
+          
+          <AnimatedSection>
+            <HowItWorks id="how-it-works" />
+          </AnimatedSection>
+          
+          <AnimatedSection>
+            <Testimonials id="testimonials" />
           </AnimatedSection>
           
           <AnimatedSection>
@@ -177,9 +215,7 @@ const Page = () => {
           </AnimatedSection>
           
           <AnimatedSection>
-            <div className=''>
-              <MarqueeStrip />
-            </div>
+            <MarqueeStrip />
           </AnimatedSection>
           
           <AnimatedSection>
@@ -191,16 +227,16 @@ const Page = () => {
 
         <style jsx global>{`
           @keyframes twinkle {
-            0% { transform: scale(1); opacity: 0.2; }
-            50% { transform: scale(1.5); opacity: 1; }
-            100% { transform: scale(1); opacity: 0.2; }
+            0%, 100% { transform: scale(1); opacity: 0.2; }
+            50% { transform: scale(1.2); opacity: 1; }
           }
           .star {
             position: absolute;
             background-color: white;
             border-radius: 50%;
             animation: twinkle infinite ease-in-out;
-            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+            will-change: transform, opacity;
+            backface-visibility: hidden;
           }
           .star:nth-child(3n) {
             background-color: #d8b4fe;

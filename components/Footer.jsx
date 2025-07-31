@@ -70,7 +70,7 @@ export default function Footer() {
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={containerVariants}
-      className="bg-zinc-800 w-full px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20 text-gray-300"
+      className="bg-zinc-900/50 backdrop-blur-lg w-full px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20 text-gray-300"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
         {/* Left section: logo and CTA */}
@@ -137,7 +137,7 @@ export default function Footer() {
                 onClick={() => scrollToSection('how-it-works')}
                 className="text-gray-300 hover:text-orange-400 transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400 text-left w-full py-1"
               >
-                About Us
+               How-It-Works
               </button>
             </motion.li>
             <motion.li variants={itemVariants}>
@@ -154,6 +154,14 @@ export default function Footer() {
                 className="text-gray-300 hover:text-orange-400 transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400 text-left w-full py-1"
               >
                 Pricing
+              </button>
+            </motion.li>
+              <motion.li variants={itemVariants}>
+              <button
+                onClick={() => scrollToSection('testimonials')}
+                className="text-gray-300 hover:text-orange-400 transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400 text-left w-full py-1"
+              >
+                Testimonials
               </button>
             </motion.li>
             <motion.li variants={itemVariants}>

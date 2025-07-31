@@ -17,7 +17,7 @@ import logo11 from "../public/LOGO-11.png";
 import logo12 from "../public/LOGO-12.png";
 
 const logosRow1 = [logo1, logo2, logo3, logo4, logo5, logo6, logo12, logo11, logo10, logo9, logo8, logo7];
-const logosRow2 = [logo7, logo8, logo9, logo10, logo11, logo12, logo6, logo5, logo4, logo3, logo2, logo1];
+
 
 const scrollX = {
   left: {
@@ -80,21 +80,21 @@ export default function LogoMarquee({ id }) {
       >
         <motion.div className="flex w-max gap-6" variants={scrollX} animate="left">
           {[...logosRow1, ...logosRow1].map((logo, i) => (
-            <motion.div
-              key={`row1-${i}`}
-              className="relative w-96 h-52"
-          
-            >
-              <div className="relative w-full h-full">
-                <Image
-                  src={logo}
-                  alt={`logo-${i}`}
-                  fill
-               className="object-scale-down border bg-gradient-to-b from-[#120700] via-[#331400] to-[#120700] rounded-3xl border-orange-700/40 shadow-lg shadow-orange-700/40"
-                  sizes="(max-width: 1000px) 210px, 306px"
-                />
-              </div>
-            </motion.div>
+         <motion.div
+  key={`row1-${i}`}
+  className="relative w-64 h-32 sm:w-72 sm:h-40"
+>
+  <div className="relative w-full h-full">
+    <Image
+      src={logo}
+      alt={`logo-${i}`}
+      fill
+      className="object-contain border bg-gradient-to-b from-[#120700] via-[#331400] to-[#120700] rounded-3xl border-orange-700/40 shadow-lg shadow-orange-700/40"
+      sizes="(max-width: 1000px) 160px, 288px"
+    />
+  </div>
+</motion.div>
+
           ))}
         </motion.div>
       </motion.div>
