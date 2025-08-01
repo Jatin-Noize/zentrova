@@ -24,7 +24,7 @@ const GettingStarted = dynamic(() => import('@/components/GettingStarted'));
 const MarqueeStrip = dynamic(() => import('@/components/MarqueeStrip'));
 const PricingComponent = dynamic(() => import('@/components/PricingComponent'));
 const FAQSection = dynamic(() => import('@/components/FAQSection'));
-const Quote = dynamic(() => import('@/components/Quote'));
+
 const ContactUsForm = dynamic(() => import('@/components/ContactUsForm'));
 const Founder = dynamic(() => import('@/components/Founder'));
 const Portfolio = dynamic(() => import('@/components/Portfolio'));
@@ -194,10 +194,7 @@ const Page = () => {
             <GettingStarted />
           </AnimatedSection>
           
-          <AnimatedSection>
-            <Quote />
-          </AnimatedSection>
-          
+         
           <AnimatedSection>
             <Portfolio id="portfolio" />
           </AnimatedSection>

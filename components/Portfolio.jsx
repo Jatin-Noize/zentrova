@@ -1,9 +1,14 @@
 import React from 'react';
+import { Inter } from 'next/font/google';
 
+const head = Inter({
+  weight: "400",
+  subsets: ['latin']
+});
 function Portfolio({id}) {
   return (
    <section id={id}><div className=" m-12">
-  <h1 className='text-4xl m-12 font-medium text-center text-[#F56F10]'>OUR PROJECTS</h1>
+  <h1 className={`text-6xl m-12 font-semibold text-center text-[#F56F10] ${head.className} `}>OUR PROJECTS</h1>
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-auto max-w-6xl">
     {/* Portfolio Item 1 */}
     <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-lg overflow-hidden h-[500px] w-full transition-all hover:scale-[1.02]">

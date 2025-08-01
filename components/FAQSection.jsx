@@ -103,7 +103,7 @@ const FAQSection = ({ id }) => {
                 </span>
                 <motion.span
                   animate={{ rotate: activeIndex === index ? 45 : 0 }}
-                  className="text-xl md:text-2xl text-orange-300"
+                  className="text-xl md:text-2xl text-white"
                 >
                   +
                 </motion.span>
@@ -119,7 +119,7 @@ const FAQSection = ({ id }) => {
                     transition={{ duration: 0.3, ease: 'easeInOut' }}
                     className="px-4 md:px-6 overflow-hidden"
                   >
-                    <div className={`pb-3 md:pb-4 text-sm md:text-base text-orange-100 ${fontans.className}`}>
+                    <div className={`pb-3 md:pb-4 text-sm md:text-base text-white ${fontans.className}`}>
                       {faq.answer}
                     </div>
                   </motion.div>

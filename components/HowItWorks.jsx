@@ -48,32 +48,23 @@ const steps = [
 
 const StepCard = ({ step }) => {
   return (
-    <div className="bg-gray-900 rounded-xl border-l-8 border-[#89400c] overflow-hidden flex flex-col h-full min-h-[500px]">
-      {/* Image banner */}
-      <div className="relative w-full h-44 sm:h-56">
-        <Image
-          src={step.imgSrc}
-          alt={step.alt}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 50vw"
-          placeholder="blur"
-          blurDataURL="/blur-placeholder.png"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-      </div>
+  <div className="bg-gray-900 rounded-xl border-l-8 border-[#89400c] overflow-hidden flex flex-col h-full min-h-[500px]">
+  {/* Image banner */}
+  <div className="relative w-full h-44 sm:h-56">
+  
+  </div>
 
-      {/* Content */}
-      <div className="p-10 flex-1 flex flex-col items-center justify-between">
-        <div className="text-center max-w-md">
-          <div className="h-12 w-12 bg-amber-700 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-lg">
-            {step.id}
-          </div>
-          <h2 className="text-2xl font-bold mb-3 text-white">{step.title}</h2>
-          <p className="text-gray-300">{step.description}</p>
-        </div>
+  {/* Content */}
+  <div className="p-10 flex-1 flex flex-col items-center justify-center">
+    <div className="text-center max-w-md">
+      <div className="h-12 w-12 bg-amber-700 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-lg">
+        {step.id}
       </div>
+      <h2 className="text-2xl font-bold mb-3 text-white">{step.title}</h2>
+      <p className="text-gray-300">{step.description}</p>
     </div>
+  </div>
+</div>
   );
 };
 

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import axios from "axios";
 import emailjs from '@emailjs/browser';
 import { Syne } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,9 +11,8 @@ const font = Syne({
   weight: "400"
 })
 
-
 const ContactUsForm = ({ isOpen, onClose }) => {
- const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
@@ -44,7 +42,7 @@ const ContactUsForm = ({ isOpen, onClose }) => {
     }
   };
 
- const validateForm = () => {
+  const validateForm = () => {
     const newErrors = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     
@@ -65,12 +63,12 @@ const ContactUsForm = ({ isOpen, onClose }) => {
 
   const sendEmail = async () => {
     // Initialize EmailJS with your public key
-     emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "bMTNMQD1QdXIMPqVj");
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "_owerlINIFR63_cnt");
     
     try {
       const response = await emailjs.send(
-    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_kwl6qh6",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_norrszm",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_bit8phi",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_wdgw004",
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -87,24 +85,23 @@ const ContactUsForm = ({ isOpen, onClose }) => {
     }
   };
 
- 
-const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Check rate limit in localStorage
     const lastSubmissionTime = localStorage.getItem('lastContactSubmission');
     if (lastSubmissionTime) {
-        const currentTime = Date.now();
-        const timeDiff = currentTime - parseInt(lastSubmissionTime, 10);
-        const oneHour = 60 * 60 * 1000; // milliseconds in an hour
-        
-        if (timeDiff < oneHour) {
-            setSubmitStatus({
-                success: false,
-                message: "Please wait at least one hour before submitting another message.",
-            });
-            return;
-        }
+      const currentTime = Date.now();
+      const timeDiff = currentTime - parseInt(lastSubmissionTime, 10);
+      const oneHour = 60 * 60 * 1000; // milliseconds in an hour
+      
+      if (timeDiff < oneHour) {
+        setSubmitStatus({
+          success: false,
+          message: "Please wait at least one hour before submitting another message.",
+        });
+        return;
+      }
     }
 
     if (!validateForm()) return;
@@ -112,50 +109,33 @@ const handleSubmit = async (e) => {
     setIsSubmitting(true);
 
     try {
-        // Store submission time in localStorage
-        localStorage.setItem('lastContactSubmission', Date.now().toString());
+      // Store submission time in localStorage
+      localStorage.setItem('lastContactSubmission', Date.now().toString());
 
-        const [apiResponse, emailResult] = await Promise.all([
-            axios.post(
-                "https://solvance.onrender.com/api/contact/create",
-                formData,
-                {
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                }
-            ),
-            sendEmail()
-        ]);
+      const emailResult = await sendEmail();
 
-        if (apiResponse.status === 200 || apiResponse.status === 201) {
-            if (emailResult.success) {
-                setSubmitStatus({
-                    success: true,
-                    message: "Thank you! We've received your message and sent a confirmation email.",
-                });
-            } else {
-                setSubmitStatus({
-                    success: true,
-                    message: "We've received your message, but there was an issue sending the confirmation email.",
-                });
-            }
-            setFormData({ name: "", email: "", message: "", phone: "" });
-        } else {
-            throw new Error("API submission failed");
-        }
-    } catch (error) {
-        console.error("Error submitting form:", error);
-        // Remove the stored time if submission failed
-        localStorage.removeItem('lastContactSubmission');
+      if (emailResult) {
         setSubmitStatus({
-            success: false,
-            message: error.message || "Something went wrong. Please try again later.",
+          success: true,
+          message: "Thank you! Your message has been sent successfully.",
         });
+        setFormData({ name: "", email: "", message: "", phone: "" });
+      } else {
+        throw new Error("Failed to send email");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      // Remove the stored time if submission failed
+      localStorage.removeItem('lastContactSubmission');
+      setSubmitStatus({
+        success: false,
+        message: "Something went wrong. Please try again later.",
+      });
     } finally {
-        setIsSubmitting(false);
+      setIsSubmitting(false);
     }
-};
+  };
+
   // Animation variants
   const backdropVariants = {
     hidden: { opacity: 0 },
@@ -243,9 +223,6 @@ const handleSubmit = async (e) => {
             variants={modalVariants}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Top Accent Bar */}
-           
-
             <div className="p-6 md:p-8">
               <div className="flex justify-between items-center mb-8">
                 <motion.h2 

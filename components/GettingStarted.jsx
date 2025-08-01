@@ -69,9 +69,9 @@ const GettingStarted = ({ id }) => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
             viewport={{ once: true }}
-            className={`text-6xl md:text-6xl uppercase font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-white ${font1.className}`}
+            className={`text-6xl md:text-6xl uppercase font-bold text-center mb-12 text-white bg-clip-text bg-gradient-to-r from-orange-300 to-white ${font1.className}`}
           >
-           LAUNCHING YOUR LOGO IS<br /> <span className='text-orange-400'>EASY!</span>
+           LAUNCHING YOUR LOGO IS<br /> <span className='text-orange-300'>EASY!</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -91,10 +91,10 @@ const GettingStarted = ({ id }) => {
                   {step.icon}
                 </motion.div>
                 <h1 className=' className={`text-xl font-semibold text-white mb-3 ${font1.className}`}'>{step.head}</h1>
-                <h3 className={`text-xl font-semibold text-white mb-3 ${font1.className}`}>
+                <h3 className={`text-2xl font-semibold text-white mb-3 ${font1.className}`}>
                   {step.title}
                 </h3>
-                <p className={`text-orange-200 leading-5 text-md ${font2.className}`}>
+                <p className={`text-white leading-5 text-md ${font2.className}`}>
                   {step.description}
                 </p>
               </motion.div>
