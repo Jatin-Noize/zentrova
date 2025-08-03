@@ -2,7 +2,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { Inter } from "next/font/google";
 
 const card = Inter({
@@ -16,16 +15,12 @@ const steps = [
     title: "Place the order here or book a call",
     description:
       "Choose one of our packages or schedule a free call if you'd like more information.",
-    imgSrc: "/step1.jpg", // replace with real image in /public
-    alt: "Order or book a call",
   },
   {
     id: 2,
     title: "Fill in our quick form",
     description:
-      "After placing your order, you’ll receive a short form with questions about your company and your vision for the logo.",
-    imgSrc: "/step2.jpg",
-    alt: "Fill form",
+      "After placing your order, you'll receive a short form with questions about your company and your vision for the logo.",
   },
   {
     id: 3,
@@ -33,35 +28,29 @@ const steps = [
       "Our expert designer crafts three unique logo concepts tailored to your brand.",
     description:
       "Once the form is submitted, our designers will begin working immediately to craft a unique logo tailored to your brand, delivered within 48 hours.",
-    imgSrc: "/step3.jpg",
-    alt: "Design concepts",
   },
   {
     id: 4,
     title: "Approve or ask for changes, without limits",
     description:
       "You can review and approve the logo, or request revisions if needed. Revisions apply to one of the existing concepts.",
-    imgSrc: "/step4.jpg",
-    alt: "Revision approval",
   },
 ];
 
 const StepCard = ({ step }) => {
   return (
-  <div className="bg-gray-900 rounded-xl border-l-8 border-[#89400c] overflow-hidden flex flex-col h-full min-h-[500px]">
-  {/* Image banner */}
-  <div className="relative w-full h-44 sm:h-56">
-  
-  </div>
-
-  {/* Content */}
-  <div className="p-10 flex-1 flex flex-col items-center justify-center">
+<div className="bg-gray-900 rounded-xl border-l-8 border-amber-700 overflow-hidden flex flex-col h-full p-8 hover:bg-gray-800 transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl">
+  <div className="flex-1 flex flex-col items-center justify-center">
     <div className="text-center max-w-md">
-      <div className="h-12 w-12 bg-amber-700 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-lg">
+      <div className="h-14 w-14 bg-amber-700 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl shadow-md">
         {step.id}
       </div>
-      <h2 className="text-2xl font-bold mb-3 text-white">{step.title}</h2>
-      <p className="text-gray-300">{step.description}</p>
+      <h2 className="text-2xl font-bold mb-4 text-white leading-tight">
+        {step.title}
+      </h2>
+      <p className="text-gray-300 text-lg leading-relaxed">
+        {step.description}
+      </p>
     </div>
   </div>
 </div>
@@ -76,13 +65,13 @@ const HowItWorks = ({ id }) => {
           {/* Header */}
           <section className="mb-20 text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              A Uniquely Simple <span className="text-[#89400c]">Process.</span>
+              A Uniquely Simple <span className="text-[#c65c11]">Process.</span>
             </h1>
             <div className="w-32 h-1.5 bg-[#89400c] mx-auto mb-8" />
           </section>
 
           {/* Steps grid */}
-          <section className="grid md:grid-cols-2 gap-10">
+          <section className="grid md:grid-cols-2 gap-8">
             {steps.map((step) => (
               <StepCard key={step.id} step={step} />
             ))}

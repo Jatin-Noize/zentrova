@@ -26,40 +26,46 @@ const Testimonials = ({id}) => {
 
   const testimonials = [
     {
-      initial: 'F',
-      name: 'Fodecilop',
+      initial: 'AG',
+      name: 'Ayle Gunner., Founder, Botanica Skincare',
       rating: '★★★★★ 5/5',
-      content:"This is my Nth logo design project with Louis. His work is so exceptional that I keep coming back. Highly recommended designer to craft your next vision."
+      content:"Working with Zentrova was an absolute game-changer for our brand. The logo they created was not only visually stunning, but it perfectly captured our brand’s essence. Their team’s creativity is unmatched — they pushed boundaries while staying true to our core values. We've had so many compliments on the new look!",
+      heading:"Creative Excellence"
     },
     {
-      initial: 'S',
-      name: 'Sporren8',
+      initial: 'TW',
+      name: ' Tate wyle. CEO, CoreLogix Technologies',
       rating: '★★★★★ 5/5',
-       content:"This is my Nth logo design project with Louis. His work is so exceptional that I keep coming back. Highly recommended designer to craft your next vision."
+       content:"Zentrova is the real deal. From our very first meeting, they treated our brand with care and professionalism. Their design process was structured yet flexible — we felt included every step of the way. What we got in the end was a world-class brand identity that we’re proud to display.",
+       heading:"Professional & Polished Process"
     },
     {
-      initial: 'R',
-      name: 'Riseglobalindia',
+      initial: 'SB',
+      name: 'Sarah B., Marketing Head, NextPhase Learning',
       rating: '★★★★★ 5/5',
-       content:"This is my Nth logo design project with Louis. His work is so exceptional that I keep coming back. Highly recommended designer to craft your next vision."
+       content:"Zentrova’s team made it incredibly easy to collaborate remotely. Their communication was timely, clear, and thoughtful — every revision was handled with patience and skill. They really listened to what we wanted and somehow delivered even more than we imagined.",
+       heading:"Smooth Communication & Collaboration"
     },
     {
-      initial: 'M',
-      name: 'MarketingPro',
+      initial: 'JZ',
+      name: 'Jenny Z., Co-Founder, Foodora Express',
       rating: '★★★★★ 5/5',
-       content:"This is my Nth logo design project with Louis. His work is so exceptional that I keep coming back. Highly recommended designer to craft your next vision."
+       content:"We were on a tight deadline to rebrand before launch, and Zentrova delivered with unbelievable speed and precision. Despite the quick timeline, nothing felt rushed — the logo and supporting brand assets were elegant, detailed, and fully aligned with our vision.",
+       heading:"Fast Turnaround Without Sacrificing Quality"
     },
     {
-      initial: 'T',
-      name: 'TechStart',
+      initial: 'LA',
+      name: 'Laila Aubrey., Creative Director, ModaHaus Interiors',
       rating: '★★★★★ 5/5',
-       content:"This is my Nth logo design project with Louis. His work is so exceptional that I keep coming back. Highly recommended designer to craft your next vision."
+       content:"Zentrova isn’t just about good-looking logos — they understand brand strategy on a deep level. Their team asked the right questions, analyzed our market, and built a visual identity that positions us uniquely. It’s not just a logo — it’s a long-term investment.",
+       heading:"Strategic Brand Thinking"
     },
     {
-      initial: 'D',
-      name: 'DesignHub',
+      initial: 'JM',
+      name: 'Jessica miller, Founder, VibeWell Studios',
       rating: '★★★★★ 5/5',
-       content:"This is my Nth logo design project with Louis. His work is so exceptional that I keep coming back. Highly recommended designer to craft your next vision."
+       content:"I can’t recommend Zentrova enough. Their passion, skill, and attention to detail are rare to find. The entire process was smooth from start to finish, and we walked away with a brand identity that truly reflects who we are. We’ll definitely be working with them again!",
+       head:"An Exceptional Experience Overall"
     }
   ];
 
@@ -154,11 +160,12 @@ const Testimonials = ({id}) => {
     </div>
     <div className="flex-1">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+        <h1 className="font-semibold text-white text-base">{testimonial.heading}</h1>
         <p className="font-semibold text-white text-base">{testimonial.name}</p>
         <div className="flex items-center gap-1 mt-1 sm:mt-0">
           {renderStars(parseFloat(testimonial.rating))}
           <span className="text-sm text-amber-300 ml-1">
-            {testimonial.rating}/5
+            {testimonial.rating}
           </span>
         </div>
       </div>

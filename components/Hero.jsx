@@ -128,7 +128,7 @@ export default function HeroSection() {
       {/* Pricing Button */}
       <button
         onClick={() => scrollToSection("pricing")}
-        className={`relative min-w-[160px] h-12 bg-[#F56F10] hover:bg-orange-700 transition-colors duration-200 text-white rounded-2xl text-sm font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-orange-500/20 whitespace-nowrap overflow-hidden ${button.className}`}
+        className={`relative min-w-[160px] px-4 h-12 bg-[#F56F10] hover:bg-orange-700 transition-colors duration-200 text-white rounded-2xl text-sm font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-orange-500/20 whitespace-nowrap overflow-hidden ${button.className}`}
         onMouseEnter={() => setIsHovered1(true)}
         onMouseLeave={() => setIsHovered1(false)}
       >
@@ -153,7 +153,7 @@ export default function HeroSection() {
       {/* Contact Button */}
       <button
         onClick={() => setIsContactFormOpen(true)}
-        className={`relative min-w-[160px] h-12 bg-white/10 hover:bg-gradient-to-b from-zinc-700 to-orange-400 transition-colors duration-200 text-white rounded-2xl text-sm font-medium flex items-center justify-center gap-2 overflow-hidden ${button.className}`}
+        className={`relative min-w-[160px] h-12 px-4 bg-white/10 hover:bg-gradient-to-b from-zinc-700 to-orange-400 transition-colors duration-200 text-white rounded-2xl text-sm font-medium flex items-center justify-center gap-2 overflow-hidden ${button.className}`}
         onMouseEnter={() => setIsHovered2(true)}
         onMouseLeave={() => setIsHovered2(false)}
       >

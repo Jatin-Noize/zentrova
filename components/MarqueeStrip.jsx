@@ -1,89 +1,111 @@
 'use client'
 import { motion } from 'framer-motion'
-import { Bebas_Neue } from "next/font/google"
+import { FaHeart, FaCoffee, FaRegSmileWink } from 'react-icons/fa'
+import { Bebas_Neue, Michroma } from "next/font/google"
 
 const herofont = Bebas_Neue({
   weight: "400",
   subsets: ['latin']
 });
 
-const MarqueeStrip = () => {
-  const crossingMessages = [
-    "White Label Logos for World-Class Agencies.",
-    "3 Bespoke Logo Concepts — Delivered in 24H"
-  ];
+const footer = Michroma({
+  weight: "400",
+  subsets: ['latin']
+}); 
 
-  const RepeatingContent = ({ message, textColor = "text-white", bgColor = "bg-orange-400" }) => (
-    <div className="flex">
-      {[...Array(2)].map((_, index) => (
-        <div
-          key={index}
-          className={`flex shrink-0 gap-12 px-8 ${bgColor}`}
-        >
-          {Array(4).fill(message).map((text, i) => (
-            <span
-              key={i}
-              className={`text-4xl ${textColor} font-medium tracking-tight whitespace-nowrap ${herofont.className}`}
-            >
-              {text}
-            </span>
-          ))}
-        </div>
-      ))}
-    </div>
-  );
+const defaultMessagesTop = [
+  {
+    text: " 3 Bespoke Logo Concepts — Delivered in 24H",
+    icon: <FaRegSmileWink className="text-orange-300" />
+  },
+  {
+    text: "White Label Logos for World-Class Agencies.",
+    icon: <FaCoffee className="text-orange-300" />
+  },
+  {
+    text: "3 Bespoke Logo Concepts — Delivered in 24H",
+    icon: <FaHeart className="text-orange-300" />
+  }
+];
+
+const defaultMessagesBottom = [
+  {
+    text: "Fast Turnaround. Premium Identity Systems.",
+    icon: <FaHeart className="text-orange-300" />
+  },
+  {
+    text: "Scale Your Agency with White Label Design.",
+    icon: <FaCoffee className="text-orange-300" />
+  },
+  {
+    text: "Trusted by Top Creatives Worldwide.",
+    icon: <FaRegSmileWink className="text-orange-300" />
+  }
+];
+
+const makeLooped = (messages) => [...messages, ...messages];
+
+const Strip = ({ messages, direction = 'left', bg }) => {
+  // direction: 'left' means x goes 0% -> -50%; 'right' is 0% -> 50%
+  const xRange = direction === 'left' ? ['0%', '-50%'] : ['0%', '50%'];
+  const duration = 12;
 
   return (
-    <div className="relative mt-36 overflow-hidden h-64">
-      {/* Diagonal Top-left to Bottom-right */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
+    <div className="relative overflow-hidden py-6" style={{ minHeight: 100, background: bg }}>
+      <div className="relative w-full">
         <motion.div
-          className="flex min-w-max"
-          style={{
-            transform: 'rotate(15deg) translateX(-25%)',
-            transformOrigin: 'left center'
-          }}
-          animate={{ x: ['0%', '-50%'] }}
+          className={`flex ${herofont.className} whitespace-nowrap`}
+          animate={{ x: xRange }}
           transition={{
-            repeat: Infinity,
-            repeatType: 'loop',
-            duration: 20,
-            ease: 'linear'
+            x: {
+              repeat: Infinity,
+              repeatType: 'loop',
+              duration,
+              ease: 'linear',
+            },
           }}
         >
-          <RepeatingContent 
-            message={crossingMessages[0]} 
-            bgColor="bg-orange-400"
-            textColor="text-white"
-          />
+          {makeLooped(messages).map((message, i) => (
+            <div key={`${direction}-${i}`} className="flex items-center shrink-0 px-8">
+              <span className="mr-3 text-5xl">{message.icon}</span>
+              <span className="text-5xl text-orange-100 font-medium tracking-tight">
+                {message.text}
+              </span>
+            </div>
+          ))}
         </motion.div>
-      </div>
-
-      {/* Diagonal Top-right to Bottom-left */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
-        <motion.div
-          className="flex min-w-max"
-          style={{
-            transform: 'rotate(-15deg) translateX(-25%)',
-            transformOrigin: 'right center'
-          }}
-          animate={{ x: ['-50%', '0%'] }}
-          transition={{
-            repeat: Infinity,
-            repeatType: 'loop',
-            duration: 18,
-            ease: 'linear'
-          }}
-        >
-          <RepeatingContent 
-            message={crossingMessages[1]} 
-            bgColor="bg-orange-500"
-            textColor="text-purple-100"
-          />
-        </motion.div>
+        {/* Invisible duplicate (for safety, though looped array usually suffices) */}
+        <div className={`absolute top-0 left-full ${herofont.className} opacity-0`}>
+          {messages.map((message, i) => (
+            <div key={`dup-${direction}-${i}`} className="flex items-center shrink-0 px-8">
+              <span className="mr-3 text-5xl">{message.icon}</span>
+              <span className="text-5xl uppercase text-orange-100 font-medium tracking-tight">
+                {message.text}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )
 }
 
-export default MarqueeStrip;
+const MarqueeStrip = ({
+  topMessages = defaultMessagesTop,
+  bottomMessages = defaultMessagesBottom,
+}) => {
+  return (
+    <div className="mt-28 space-y-6">
+      <Strip messages={topMessages} direction="left" bg="#F56F10" />
+      <Strip messages={bottomMessages} direction="right" bg="#d97706" />
+      {/* Optional overlay if you still want a blend effect across both */}
+      <div className="relative">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute inset-0 mix-blend-overlay" />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default MarqueeStrip

@@ -212,7 +212,9 @@ const Page = () => {
           </AnimatedSection>
           
           <AnimatedSection>
-            <MarqueeStrip />
+    <MarqueeStrip />
+          
+          
           </AnimatedSection>
           
           <AnimatedSection>

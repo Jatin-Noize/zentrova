@@ -48,7 +48,19 @@ const FAQSection = ({ id }) => {
     {
       question: "How do I provide ideas for my logo design?",
       answer: "You can share your ideas through our design brief form, or schedule a consultation call with our designers to discuss your vision."
-    }
+    },
+      {
+      question: "What is in the 20 pages long corporate identity book?",
+      answer: "You wil have everything you need to properly build your brand. From log usage guidlines, to color palettes. Typography, mockups and more."
+    },
+      {
+      question: "What industries do you serve?",
+      answer: "Every industry. From small shops to global disruptive healthcare startups."
+    },
+      {
+      question: "What if I don't like my logo?",
+      answer: "If you don't like the logo, we will revise it and make it perfect. This rarely happens, but if we're still not able to make something you love, we'll give you a full refung :)."
+    },
   ];
 
   const toggleFAQ = (index) => {
