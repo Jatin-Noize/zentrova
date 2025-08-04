@@ -45,13 +45,22 @@ const defaultMessagesBottom = [
 
 const makeLooped = (messages) => [...messages, ...messages];
 
-const Strip = ({ messages, direction = 'left', bg }) => {
-  // direction: 'left' means x goes 0% -> -50%; 'right' is 0% -> 50%
+const Strip = ({ messages, direction = 'left', bg, rotate }) => {
   const xRange = direction === 'left' ? ['0%', '-50%'] : ['0%', '50%'];
   const duration = 12;
 
   return (
-    <div className="relative overflow-hidden py-6" style={{ minHeight: 100, background: bg }}>
+    <motion.div 
+      className="relative overflow-hidden py-6"
+      style={{ 
+        minHeight: 100, 
+        background: bg,
+        rotate: rotate || 0
+      }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="relative w-full">
         <motion.div
           className={`flex ${herofont.className} whitespace-nowrap`}
@@ -74,19 +83,8 @@ const Strip = ({ messages, direction = 'left', bg }) => {
             </div>
           ))}
         </motion.div>
-        {/* Invisible duplicate (for safety, though looped array usually suffices) */}
-        <div className={`absolute top-0 left-full ${herofont.className} opacity-0`}>
-          {messages.map((message, i) => (
-            <div key={`dup-${direction}-${i}`} className="flex items-center shrink-0 px-8">
-              <span className="mr-3 text-5xl">{message.icon}</span>
-              <span className="text-5xl uppercase text-orange-100 font-medium tracking-tight">
-                {message.text}
-              </span>
-            </div>
-          ))}
-        </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
@@ -95,15 +93,19 @@ const MarqueeStrip = ({
   bottomMessages = defaultMessagesBottom,
 }) => {
   return (
-    <div className="mt-28 space-y-6">
-      <Strip messages={topMessages} direction="left" bg="#F56F10" />
-      <Strip messages={bottomMessages} direction="right" bg="#d97706" />
-      {/* Optional overlay if you still want a blend effect across both */}
-      <div className="relative">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute inset-0 mix-blend-overlay" />
-        </div>
+    <div className="mt-36 relative h-[200px]">
+      {/* Top strip - tilted slightly clockwise */}
+      <div className="absolute top-0 left-0 w-full origin-center transform rotate-3 z-10">
+        <Strip messages={topMessages} direction="left" bg="#F56F10" rotate="5deg" />
       </div>
+      
+      {/* Bottom strip - tilted slightly counter-clockwise */}
+      <div className="absolute bottom-0 left-0 w-full origin-center transform -rotate-3 z-10">
+        <Strip messages={bottomMessages} direction="right" bg="#d97706" rotate="-5deg" />
+      </div>
+      
+      {/* Overlay for blend effect */}
+      <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-50 z-20" />
     </div>
   )
 }

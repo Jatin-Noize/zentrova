@@ -90,56 +90,72 @@ export default function Footer() {
           <motion.p variants={itemVariants} className={`text-sm text-gray-400 mb-6 ${footer.className}`}>
             Get your agency aligned with Zentrova quality service at the best price
           </motion.p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            variants={itemVariants}
-            onClick={() => setIsContactFormOpen(true)}
-            className={`relative w-44 h-12 bg-orange-500 hover:bg-orange-600 mt-6 transition-colors duration-200 text-white rounded-2xl text-sm font-medium flex items-center justify-center overflow-hidden ${footer.className}`}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            {/* Default state - text with small icon */}
-            <motion.span
-              className={`flex items-center gap-2 transition-all duration-200 absolute ${
-                isHovered ? 'opacity-0 -translate-x-5' : 'opacity-100 translate-x-0'
-              }`}
-            >
-              Book a call
-              <CalendarCheck size={20} />
-            </motion.span>
+       <motion.button
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  variants={itemVariants}
+  onClick={() => setIsContactFormOpen(true)}
+  className={`relative w-44 h-12 bg-orange-500 hover:bg-orange-600 mt-6 transition-colors duration-200 text-white rounded-2xl text-sm font-medium flex items-center justify-center overflow-hidden ${footer.className}`}
+  onMouseEnter={() => setIsHovered(true)}
+  onMouseLeave={() => setIsHovered(false)}
+>
+  {/* Default state - text with small icon */}
+  <motion.span
+    className={`flex items-center gap-2 transition-all duration-200 absolute ${
+      isHovered ? 'opacity-0 -translate-x-5' : 'opacity-100 translate-x-0'
+    }`}
+  >
+    Book a call
+    <CalendarCheck size={20} />
+  </motion.span>
 
-            <motion.span
-              className="absolute flex items-center justify-center"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{
-                opacity: isHovered ? 1 : 0,
-                y: isHovered ? 0 : 10,
-                rotate: isHovered ? 45 : 0
-              }}
-              transition={{ duration: 0.2 }}
-            >
-              <CalendarCheck size={28} className="stroke-[2.5]" />
-            </motion.span>
-          </motion.button>
-          <ContactUsForm
-            isOpen={isContactFormOpen}
-            onClose={() => setIsContactFormOpen(false)}
-          />
+  <motion.span
+    className="absolute flex items-center justify-center"
+    initial={{ opacity: 0, y: 10 }}
+    animate={{
+      opacity: isHovered ? 1 : 0,
+      y: isHovered ? 0 : 10,
+      rotate: isHovered ? 45 : 0
+    }}
+    transition={{ duration: 0.2 }}
+  >
+    <CalendarCheck size={28} className="stroke-[2.5]" />
+  </motion.span>
+</motion.button>
+
+{/* Full-screen Contact Form Modal */}
+<AnimatePresence>
+  {isContactFormOpen && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+    >
+      <motion.div
+        initial={{ scale: 0.9, y: 20 }}
+        animate={{ scale: 1, y: 0 }}
+        exit={{ scale: 0.9, y: 20 }}
+        className="relative w-full max-w-4xl h-[90vh] bg-gradient-to-br from-gray-900 to-black rounded-xl shadow-2xl border border-orange-500/30 overflow-y-auto"
+      >
+        <button
+          onClick={() => setIsContactFormOpen(false)}
+          className="absolute top-4 right-4 text-orange-300 hover:text-white transition-colors z-10"
+        >
+          <X size={24} />
+        </button>
+        <ContactUsForm onClose={() => setIsContactFormOpen(false)} />
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
         </motion.div>
 
         {/* Quick links section */}
         <motion.div className={`${herofont.className} mt-12`} variants={itemVariants}>
           <motion.h3 variants={itemVariants} className="text-white font-semibold mb-4 text-sm md:text-base">Quick links</motion.h3>
           <motion.ul variants={containerVariants} className="space-y-2 text-sm">
-            <motion.li variants={itemVariants}>
-              <button 
-                onClick={() => scrollToSection('how-it-works')}
-                className="text-gray-300 hover:text-orange-400 transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400 text-left w-full py-1"
-              >
-               How-It-Works
-              </button>
-            </motion.li>
+         
             <motion.li variants={itemVariants}>
               <button
                 onClick={() => scrollToSection('portfolio')}
@@ -154,6 +170,14 @@ export default function Footer() {
                 className="text-gray-300 hover:text-orange-400 transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400 text-left w-full py-1"
               >
                 Pricing
+              </button>
+            </motion.li>
+               <motion.li variants={itemVariants}>
+              <button 
+                onClick={() => scrollToSection('how-it-works')}
+                className="text-gray-300 hover:text-orange-400 transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400 text-left w-full py-1"
+              >
+               How-It-Works
               </button>
             </motion.li>
               <motion.li variants={itemVariants}>
@@ -208,7 +232,7 @@ export default function Footer() {
               </svg>
             </Link>
             <Link 
-              href="https://www.instagram.com/solvance_agency/profilecard/?igsh=MWs2cDBnamdteWM4Mg==" 
+              href="" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-orange-400 transition-colors"
@@ -231,7 +255,7 @@ export default function Footer() {
               </svg>
             </Link>
             <Link 
-              href="https://www.linkedin.com/in/solvance-68a712373/" 
+              href="" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-orange-400 transition-colors"

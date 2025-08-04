@@ -3,18 +3,18 @@ import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 
-import logo1 from "../public/LOGO-01.png";
-import logo2 from "../public/LOGO-02.png";
-import logo3 from "../public/LOGO-03.png";
-import logo4 from "../public/LOGO-04.png";
-import logo5 from "../public/LOGO-05.png";
-import logo6 from "../public/LOGO-06.png";
-import logo7 from "../public/LOGO-07.png";
-import logo8 from "../public/LOGO-08.png";
-import logo9 from "../public/LOGO-09.png";
-import logo10 from "../public/LOGO-10.png";
-import logo11 from "../public/LOGO-11.png";
-import logo12 from "../public/LOGO-12.png";
+import logo1 from "../public/images/LOGO-01.png";
+import logo2 from "../public/images/LOGO-02.png";
+import logo3 from "../public/images/LOGO-03.png";
+import logo4 from "../public/images/LOGO-04.png";
+import logo5 from "../public/images/LOGO-05.png";
+import logo6 from "../public/images/LOGO-06.png";
+import logo7 from "../public/images/LOGO-07.png";
+import logo8 from "../public/images/LOGO-08.png";
+import logo9 from "../public/images/LOGO-09.png";
+import logo10 from "../public/images/LOGO-10.png";
+import logo11 from "../public/images/LOGO-11.png";
+import logo12 from "../public/images/LOGO-12.png";
 
 const logosRow1 = [logo1, logo2, logo3, logo4, logo5, logo6, logo12, logo11, logo10, logo9, logo8, logo7];
 
