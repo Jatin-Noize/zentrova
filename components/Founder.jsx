@@ -1,5 +1,7 @@
 import React from 'react';
 import { Mina, Syne } from "next/font/google";
+import Ammara from '../public/images/ammara.jpeg'
+import Image from 'next/image';
 
 const founder = Syne({
   weight: "400",
@@ -34,12 +36,12 @@ const Founder = ({id}) => {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
-                  <div className="bg-[#F56F0F] w-12 h-12 rounded-full flex items-center justify-center text-white font-bold">
-                    PD
+                  <div className="bg-[#] w-12  rounded-full  h-12flex items-center justify-center text-white font-bold">
+                   <Image className=' rounded-full ' alt='founder' src={Ammara}></Image>
                   </div>
                   <div className="text-center md:text-left">
-                    <h4 className="text-white font-bold text-lg">Paul Darmas</h4>
-                    <p className="text-[#F56F0F] text-sm">Founder of 💡️💡️💡️</p>
+                    <h4 className="text-white font-bold text-lg">Ammara Shafiq</h4>
+                    <p className="text-[#F56F0F] text-sm">Founder of Zentrova</p>
                   </div>
                 </div>
               </div>

@@ -2,11 +2,21 @@
 "use client";
 
 import React from "react";
-import { Inter } from "next/font/google";
+import { Inter,Bebas_Neue, Syne } from "next/font/google";
 
-const card = Inter({
+const card = Syne({
   weight: "400",
   subsets: ["latin"],
+});
+
+const head = Bebas_Neue({  
+  weight: "400",
+  subsets: ['latin']
+});
+
+const head2 = Syne({  
+  weight: "400",
+  subsets: ['latin']
 });
 
 const steps = [
@@ -64,9 +74,9 @@ const HowItWorks = ({ id }) => {
         <div className={`max-w-6xl mx-auto ${card.className}`}>
           {/* Header */}
           <section className="mb-20 text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              A Uniquely Simple <span className="text-[#c65c11]">Process.</span>
-            </h1>
+          <h1 className={`text-6xl md:text-7xl lg:text-8xl font-bold mb-6 ${head.className}`}>
+  A Uniquely Simple <span className="text-[#c65c11]">Process.</span>
+</h1>
             <div className="w-32 h-1.5 bg-[#89400c] mx-auto mb-8" />
           </section>
 

@@ -66,12 +66,12 @@ const PricingComponent = ({ id }) => {
           variants={containerVariants}
           className={`max-w-4xl mx-auto text-center `}
         >
-          <motion.h1
-            variants={itemVariants}
-            className={`text-6xl font-bold tracking-tight text-white mb ${font1.className} `}
-          >
-            SIMPLE<span className='text-orange-400'> PRICING</span>
-          </motion.h1>
+         <motion.h1
+  variants={itemVariants}
+  className={`text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white ${font1.className}`}
+>
+  SIMPLE<span className='text-orange-400'> PRICING</span>
+</motion.h1>
 
           <motion.p
             variants={itemVariants}

@@ -7,6 +7,7 @@ import { ArrowUp, ArrowRight, CalendarCheck } from 'lucide-react';
 import ContactUsForm from './ContactUsForm';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
 const herofont = Syne({
   weight: "400",

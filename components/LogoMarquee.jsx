@@ -16,7 +16,7 @@ import logo10 from "../public/images/LOGO-10.png";
 import logo11 from "../public/images/LOGO-11.png";
 import logo12 from "../public/images/LOGO-12.png";
 
-const logosRow1 = [logo1, logo2, logo3, logo4, logo5, logo6, logo12, logo11, logo10, logo9, logo8, logo7];
+const logosRow1 = [logo1, logo2, logo3, logo4, logo5, logo6];
 
 
 const scrollX = {

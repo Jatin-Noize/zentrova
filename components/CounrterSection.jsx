@@ -44,13 +44,13 @@ const CounterItem = ({ value, suffix = "", title, duration = 2 }) => {
         transition: { duration: 0.6, ease: "easeOut" },
       }}
       viewport={{ once: true }}
-      className="text-center p-6 rounded-xl backdrop-blur-sm"
+      className="text-center p-4 rounded-xl backdrop-blur-sm"
     >
-      <div className={`text-7xl font-bold text-white bg-clip-text bg-gradient-to-r from-orange-300 to-orange-100 ${button.className}`}>
+      <div className={`text-5xl font-bold text-white bg-clip-text bg-gradient-to-r from-orange-300 to-orange-100 ${button.className}`}>
         {typeof value === "number" ? Math.floor(count) : count}
         {suffix}
       </div>
-      <div className={`mt-4 text-md text-white font-medium ${herofont.className} leading-tight`}>
+      <div className={`mt-2 text-sm text-white font-medium ${herofont.className} leading-tight`}>
         {title.split('\n').map((line, i) => (
           <p key={i} className="m-0 p-0">
             {line}
@@ -76,7 +76,7 @@ const CounterSection = () => {
     <motion.section
       ref={sectionRef}
       style={{ opacity }}
-      className="py-20 relative overflow-hidden"
+      className="py-12 relative overflow-hidden"
     >
       <motion.div className="absolute inset-0 opacity-10" style={{ y }}>
         <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid-pattern.svg')]"></div>
@@ -91,12 +91,12 @@ const CounterSection = () => {
             transition: { duration: 0.8 },
           }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="mb- text-center"
         >
           {/* Optional Heading Here */}
         </motion.div>
 
-        <div className="grid text-white grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid text-white grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
           <CounterItem
             value={400}
             suffix="+"
