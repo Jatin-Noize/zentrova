@@ -40,6 +40,10 @@ const defaultMessagesBottom = [
   {
     text: "Trusted by Top Creatives Worldwide.",
     icon: <FaRegSmileWink className="text-orange-300" />
+  },
+   {
+    text: "Fast Turnaround. Premium Identity Systems.",
+    icon: <FaRegSmileWink className="text-orange-300" />
   }
 ];
 
