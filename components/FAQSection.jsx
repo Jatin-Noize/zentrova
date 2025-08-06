@@ -59,7 +59,7 @@ const FAQSection = ({ id }) => {
     },
       {
       question: "What if I don't like my logo?",
-      answer: "If you don't like the logo, we will revise it and make it perfect. This rarely happens, but if we're still not able to make something you love, we'll give you a full refung :)."
+      answer: "If you don't like the logo, we will revise it and make it perfect. This rarely happens, but if we're still not able to make something you love, we'll give you a full refund :)."
     },
   ];
 

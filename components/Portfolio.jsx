@@ -19,7 +19,7 @@ function Portfolio({id}) {
           OUR PROJECTS
         </h1>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> {/* Increased gap from gap-6 to gap-8 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> 
           {/* Portfolio Item 1 */}
           <div className="relative rounded-xl shadow-lg overflow-hidden aspect-video transition-all duration-300 hover:scale-[1.03]">
             <Image 
@@ -33,7 +33,7 @@ function Portfolio({id}) {
           </div>
 
           {/* Portfolio Item 2 */}
-          <div className="relative rounded-xl shadow-lg overflow-hidden aspect-video transition-all duration-300 hover:scale-[1.03]">
+          <div className="relative rounded-xl  shadow-lg overflow-hidden aspect-video transition-all duration-300 hover:scale-[1.03]">
             <Image 
               src={img2}
               alt="Flexible Payroll Project"

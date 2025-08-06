@@ -51,9 +51,9 @@ const Strip = ({ messages, direction = 'left', bg, rotate }) => {
 
   return (
     <motion.div 
-      className="relative overflow-hidden py-6"
+      className="relative overflow-hidden py-3" // Reduced further to py-3
       style={{ 
-        minHeight: 100, 
+        minHeight: 60, // Reduced from 80 to 60
         background: bg,
         rotate: rotate || 0
       }}
@@ -75,9 +75,9 @@ const Strip = ({ messages, direction = 'left', bg, rotate }) => {
           }}
         >
           {makeLooped(messages).map((message, i) => (
-            <div key={`${direction}-${i}`} className="flex items-center shrink-0 px-8">
-              <span className="mr-3 text-5xl">{message.icon}</span>
-              <span className="text-5xl text-orange-100 font-medium tracking-tight">
+            <div key={`${direction}-${i}`} className="flex items-center shrink-0 px-6"> {/* Reduced px-8 to px-6 */}
+              <span className="mr-2 text-3xl">{message.icon}</span> {/* Reduced from text-4xl to text-3xl */}
+              <span className="text-3xl text-orange-100 font-medium tracking-tight"> {/* Reduced from text-4xl to text-3xl */}
                 {message.text}
               </span>
             </div>
@@ -93,7 +93,7 @@ const MarqueeStrip = ({
   bottomMessages = defaultMessagesBottom,
 }) => {
   return (
-    <div className="mt-36 relative h-[200px]">
+    <div className="mt-36 relative h-[120px]"> {/* Reduced from h-[160px] to h-[120px] */}
       {/* Top strip - tilted slightly clockwise */}
       <div className="absolute top-0 left-0 w-full origin-center transform rotate-3 z-10">
         <Strip messages={topMessages} direction="left" bg="#F56F10" rotate="5deg" />

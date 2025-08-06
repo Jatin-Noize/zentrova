@@ -150,7 +150,7 @@ export default function Footer() {
                   onClick={() => scrollToSection('how-it-works')}
                   className="text-gray-300 hover:text-orange-400 transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400 text-left w-full py-1"
                 >
-                  How-It-Works
+                 Overview
                 </button>
               </motion.li>
               <motion.li variants={itemVariants}>

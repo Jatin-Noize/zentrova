@@ -69,7 +69,7 @@ export default function Navbar() {
             onClick={() => scrollToSection('how-it-works')}
             className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline underline-offset-4 decoration-[#F56F10]"
           >
-           How It Works
+          Overview
           </button>
            <button
             onClick={() => scrollToSection('testimonials')}
@@ -159,7 +159,7 @@ export default function Navbar() {
               onClick={() => scrollToSection('how-it-works')}
               className="text-gray-300 hover:text-white transition-colors duration-200 py-3 w-full text-center border-b border-orange-900/30"
             >
-             How-It-Works
+             Overview
             </button>
             <button
               onClick={() => scrollToSection('portfolio')}
