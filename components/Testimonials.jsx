@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
-import { Inter, Syne,Bebas_Neue } from 'next/font/google';
+import { Inter, Ubuntu,Bebas_Neue } from 'next/font/google';
+
+
 import { Star, StarHalf, Star as StarEmpty } from "lucide-react"; 
 
-const head = Syne({
+const head = Ubuntu({
   weight: "400",
   subsets: ['latin']
 });

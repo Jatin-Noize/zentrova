@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Syne, Bebas_Neue, Unbounded } from "next/font/google";
+import { Ubuntu, Bebas_Neue, Unbounded } from "next/font/google";
 
-const font = Syne({
+const font = Ubuntu({
   weight: "400",
   subsets: ["latin"]
 });
@@ -12,7 +12,7 @@ const getfont = Bebas_Neue({
   subsets: ["latin"]
 });
 
-const fontans = Syne({
+const fontans = Ubuntu({
   weight: "400",
   subsets: ['latin']
 });
@@ -82,9 +82,9 @@ const FAQSection = ({ id }) => {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="text-center mb-8 md:mb-12"
         >
-          <h1 className={`text-6xl md:text-6xl tracking-tight font-bold text-white mb-3 md:mb-4 ${getfont.className}`}>
-            FAQ
-          </h1>
+         <h1 className={`text-7xl md:text-7xl lg:text-9xl tracking-tight font-bold text-white mb-3 md:mb-4 ${getfont.className}`}>
+  FAQ
+</h1>
           <p className={` md:text-md text-orange-200 ${font.className}`}>
            Get your agency aligned with Solvance
  quality service at the best price.

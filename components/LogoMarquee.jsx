@@ -3,15 +3,15 @@ import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 
-import logo1 from "../public/images/logo1.png";
-import logo2 from "../public/images/logo2.png";
-import logo3 from "../public/images/logo3.png";
-import logo4 from "../public/images/logo4.png";
-import logo5 from "../public/images/logo5.png";
-import logo6 from "../public/images/logo6.png";
-import logo7 from "../public/images/logo7.png";
+import logo1 from "../public/images/logo1.webp";
+import logo2 from "../public/images/logo2.webp";
+import logo3 from "../public/images/logo3.webp";
+import logo4 from "../public/images/logo4.webp";
+import logo5 from "../public/images/logo5.webp";
+import logo6 from "../public/images/logo6.webp";
+import logo7 from "../public/images/logo7.webp";
 
-const logosRow1 = [logo1, logo2, logo3, logo4, logo5, logo6];
+const logosRow1 = [logo1, logo2, logo3, logo4, logo5, logo6,logo7];
 
 
 const scrollX = {

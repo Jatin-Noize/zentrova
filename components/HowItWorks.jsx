@@ -2,9 +2,9 @@
 "use client";
 
 import React from "react";
-import { Inter,Bebas_Neue, Syne } from "next/font/google";
+import { Inter,Bebas_Neue, Ubuntu } from "next/font/google";
 
-const card = Syne({
+const card = Ubuntu({
   weight: "400",
   subsets: ["latin"],
 });
@@ -14,7 +14,7 @@ const head = Bebas_Neue({
   subsets: ['latin']
 });
 
-const head2 = Syne({  
+const head2 = Ubuntu({  
   weight: "400",
   subsets: ['latin']
 });

@@ -1,9 +1,14 @@
 import React from 'react';
-import { Mina, Syne } from "next/font/google";
+import { Ubuntu, Syne } from "next/font/google";
 import Ammara from '../public/images/ammara.jpeg'
 import Image from 'next/image';
 
-const founder = Syne({
+const founder = Ubuntu({
+  weight: "400",
+  subsets: ['latin']
+});
+
+const founder2 = Syne({
   weight: "400",
   subsets: ['latin']
 });
@@ -39,7 +44,7 @@ const Founder = ({id}) => {
                   <div className="bg-[#] w-12  rounded-full  h-12flex items-center justify-center text-white font-bold">
                    <Image className=' rounded-full ' alt='founder' src={Ammara}></Image>
                   </div>
-                  <div className="text-center md:text-left">
+                  <div className={`text-center md:text-left ${founder2.className} `}>
                     <h4 className="text-white font-bold text-lg">Ammara Shafiq</h4>
                     <p className="text-[#F56F0F] text-sm">Founder of Zentrova</p>
                   </div>

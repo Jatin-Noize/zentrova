@@ -1,9 +1,9 @@
 'use client'
 import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { Syne } from 'next/font/google'
+import { Syne,Ubuntu } from 'next/font/google'
 
-const herofont = Syne({
+const herofont = Ubuntu({
   weight: '400',
   subsets: ['latin'],
 })

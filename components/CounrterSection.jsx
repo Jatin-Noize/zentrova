@@ -1,11 +1,11 @@
 'use client'
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Mina, Oswald,Bebas_Neue, Syne } from "next/font/google";
+import { Mina, Ubuntu,Bebas_Neue, Syne } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 // Fonts
-const herofont = Syne({ weight: "400", subsets: ['latin'] });
+const herofont = Ubuntu({ weight: "400", subsets: ['latin'] });
 const button = Bebas_Neue({ weight: "400", subsets: ['latin'] });
 
 // CounterItem Component
