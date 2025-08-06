@@ -3,18 +3,13 @@ import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 
-import logo1 from "../public/images/LOGO-01.png";
-import logo2 from "../public/images/LOGO-02.png";
-import logo3 from "../public/images/LOGO-03.png";
-import logo4 from "../public/images/LOGO-04.png";
-import logo5 from "../public/images/LOGO-05.png";
-import logo6 from "../public/images/LOGO-06.png";
-import logo7 from "../public/images/LOGO-07.png";
-import logo8 from "../public/images/LOGO-08.png";
-import logo9 from "../public/images/LOGO-09.png";
-import logo10 from "../public/images/LOGO-10.png";
-import logo11 from "../public/images/LOGO-11.png";
-import logo12 from "../public/images/LOGO-12.png";
+import logo1 from "../public/images/logo1.png";
+import logo2 from "../public/images/logo2.png";
+import logo3 from "../public/images/logo3.png";
+import logo4 from "../public/images/logo4.png";
+import logo5 from "../public/images/logo5.png";
+import logo6 from "../public/images/logo6.png";
+import logo7 from "../public/images/logo7.png";
 
 const logosRow1 = [logo1, logo2, logo3, logo4, logo5, logo6];
 
@@ -84,15 +79,15 @@ export default function LogoMarquee({ id }) {
   key={`row1-${i}`}
   className="relative w-64 h-32 sm:w-72 sm:h-40"
 >
-  <div className="relative w-full h-full">
-    <Image
-      src={logo}
-      alt={`logo-${i}`}
-      fill
-      className="object-contain border bg-gradient-to-b from-[#120700] via-[#331400] to-[#120700] rounded-3xl border-orange-700/40 shadow-lg shadow-orange-700/40"
-      sizes="(max-width: 1000px) 160px, 288px"
-    />
-  </div>
+<div className="relative w-full h-full">
+  <Image
+    src={logo}
+    alt={`logo-${i}`}
+    fill
+    className="object-contain border bg-gradient-to-b from-orange-100 via-orange-200 to-orange-100 rounded-3xl border-orange-300 shadow-lg shadow-orange-300/40"
+    sizes="(max-width: 1000px) 160px, 288px"
+  />
+</div>
 </motion.div>
 
           ))}

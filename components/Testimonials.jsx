@@ -125,7 +125,9 @@ const Testimonials = ({id}) => {
         <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
       </svg>
       <blockquote className={`text-base md:text-2xl font-medium mb-4 leading-relaxed ${head.className}`}>
-        "Let me start by saying Louis Key and the crew at Softriver aren't just designers—they're logo superheroes! When I needed a logo for my SaaS baby, NurtureMachine, I didn't just want something nice; I wanted something that would knock people's socks off. And boy, did they deliver! ... I couldn't be prouder to slap that logo on everything from our website to our coffee mugs. So, if you're looking for designers who will take your vision and turn it into something beyond your wildest dreams, look no further than Louis Key and Softriver."
+       "Ammara Shafiq and the team at Zentrova aren’t just designers—they’re logo legends! When I needed branding for my SaaS baby, NurtureMachine, I wanted something unforgettable—and they absolutely delivered.
+The logo captures our vision perfectly. It’s bold, beautiful, and proudly lives on everything from our website to our coffee mugs. If you’re looking for design that truly stands out, Zentrova is the team to call."
+
       </blockquote>
       <div className="flex items-center">
         <div className="bg-amber-600 rounded-full w-10 h-10 flex items-center justify-center text-white font-bold text-lg mr-3">
@@ -134,7 +136,7 @@ const Testimonials = ({id}) => {
         <div>
           <p className="font-bold text-sm">John Danes</p>
           <p className="text-amber-200 text-xs">★★★★★ 5/5</p>
-          <p className="text-xs text-amber-100 opacity-80">Marketing Agency Founder – USA</p>
+          <p className="text-xs text-amber-100 opacity-80">Founder, NurtureMachine </p>
         </div>
       </div>
     </motion.div>

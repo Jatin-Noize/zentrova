@@ -66,237 +66,216 @@ export default function Footer() {
   };
 
   return (
-    <motion.footer 
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      variants={containerVariants}
-      className="bg-zinc-900/50 backdrop-blur-lg w-full px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20 text-gray-300"
-    >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-        {/* Left section: logo and CTA */}
-        <motion.div variants={itemVariants} className="md:col-span-2">
-          <div className="flex items-center gap-2 mb-4">
-            <Link href="/" className="flex items-center">
-              <Image
-                src={Logo}
-                alt="Zentrova Logo"
-                width={180}
-                height={70}
-                className="object-contain hover:opacity-90 transition-opacity w-40 md:w-44"
-                priority
-              />
-            </Link>
-          </div>
-          <motion.p variants={itemVariants} className={`text-sm text-gray-400 mb-6 ${footer.className}`}>
-            Get your agency aligned with Zentrova quality service at the best price
-          </motion.p>
-       <motion.button
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-  variants={itemVariants}
-  onClick={() => setIsContactFormOpen(true)}
-  className={`relative w-44 h-12 bg-orange-500 hover:bg-orange-600 mt-6 transition-colors duration-200 text-white rounded-2xl text-sm font-medium flex items-center justify-center overflow-hidden ${footer.className}`}
-  onMouseEnter={() => setIsHovered(true)}
-  onMouseLeave={() => setIsHovered(false)}
->
-  {/* Default state - text with small icon */}
-  <motion.span
-    className={`flex items-center gap-2 transition-all duration-200 absolute ${
-      isHovered ? 'opacity-0 -translate-x-5' : 'opacity-100 translate-x-0'
-    }`}
-  >
-    Book a call
-    <CalendarCheck size={20} />
-  </motion.span>
-
-  <motion.span
-    className="absolute flex items-center justify-center"
-    initial={{ opacity: 0, y: 10 }}
-    animate={{
-      opacity: isHovered ? 1 : 0,
-      y: isHovered ? 0 : 10,
-      rotate: isHovered ? 45 : 0
-    }}
-    transition={{ duration: 0.2 }}
-  >
-    <CalendarCheck size={28} className="stroke-[2.5]" />
-  </motion.span>
-</motion.button>
-
-{/* Full-screen Contact Form Modal */}
-<AnimatePresence>
-  {isContactFormOpen && (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
-    >
-      <motion.div
-        initial={{ scale: 0.9, y: 20 }}
-        animate={{ scale: 1, y: 0 }}
-        exit={{ scale: 0.9, y: 20 }}
-        className="relative w-full max-w-4xl h-[90vh] bg-gradient-to-br from-gray-900 to-black rounded-xl shadow-2xl border border-orange-500/30 overflow-y-auto"
-      >
-        <button
-          onClick={() => setIsContactFormOpen(false)}
-          className="absolute top-4 right-4 text-orange-300 hover:text-white transition-colors z-10"
-        >
-          <X size={24} />
-        </button>
-        <ContactUsForm onClose={() => setIsContactFormOpen(false)} />
-      </motion.div>
-    </motion.div>
-  )}
-</AnimatePresence>
-        </motion.div>
-
-        {/* Quick links section */}
-        <motion.div className={`${herofont.className} mt-12`} variants={itemVariants}>
-          <motion.h3 variants={itemVariants} className="text-white font-semibold mb-4 text-sm md:text-base">Quick links</motion.h3>
-          <motion.ul variants={containerVariants} className="space-y-2 text-sm">
-         
-            <motion.li variants={itemVariants}>
-              <button
-                onClick={() => scrollToSection('portfolio')}
-                className="text-orange-400 hover:text-white transition-colors duration-200 font-semibold hover:underline underline-offset-4 decoration-orange-400 text-left w-full py-1"
-              >
-                Portfolio
-              </button>
-            </motion.li>
-            <motion.li variants={itemVariants}>
-              <button
-                onClick={() => scrollToSection('pricing')}
-                className="text-gray-300 hover:text-orange-400 transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400 text-left w-full py-1"
-              >
-                Pricing
-              </button>
-            </motion.li>
-               <motion.li variants={itemVariants}>
-              <button 
-                onClick={() => scrollToSection('how-it-works')}
-                className="text-gray-300 hover:text-orange-400 transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400 text-left w-full py-1"
-              >
-               How-It-Works
-              </button>
-            </motion.li>
-              <motion.li variants={itemVariants}>
-              <button
-                onClick={() => scrollToSection('testimonials')}
-                className="text-gray-300 hover:text-orange-400 transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400 text-left w-full py-1"
-              >
-                Testimonials
-              </button>
-            </motion.li>
-            <motion.li variants={itemVariants}>
-              <button
-                onClick={() => scrollToSection('faq')}
-                className="text-gray-300 hover:text-orange-400 transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400 text-left w-full py-1"
-              >
-                FAQ
-              </button>
-            </motion.li>
-          </motion.ul>
-        </motion.div>
-      </div>
-
-      {/* Bottom bar */}
-      <motion.div 
+    <>
+      <motion.footer 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
-        className={`max-w-7xl mx-auto border-t border-gray-700 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 ${footer.className}`}
+        className="relative bg-zinc-900/50 backdrop-blur-lg w-full px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20 text-gray-300"
       >
-        <motion.p variants={itemVariants} className="mb-4 md:mb-0">&copy; 2025 Zentrova. All rights reserved.</motion.p>
-        
-        <motion.div variants={containerVariants} className="flex flex-col md:flex-row items-center gap-6">
-          {/* Social Media Links */}
-          <motion.div variants={itemVariants} className="flex mx-10 gap-8">
-            <Link 
-              href="https://twitter.com/yourusername" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-orange-400 transition-colors"
-              aria-label="Twitter"
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+          {/* Left section: logo and CTA */}
+          <motion.div variants={itemVariants} className="md:col-span-2">
+            <div className="flex items-center gap-2 mb-4">
+              <Link href="/" className="flex items-center">
+                <Image
+                  src={Logo}
+                  alt="Zentrova Logo"
+                  width={180}
+                  height={70}
+                  className="object-contain hover:opacity-90 transition-opacity w-40 md:w-44"
+                  priority
+                />
+              </Link>
+            </div>
+            <motion.p variants={itemVariants} className={`text-sm text-gray-400 mb-6 ${footer.className}`}>
+              Get your agency aligned with Zentrova quality service at the best price
+            </motion.p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              variants={itemVariants}
+              onClick={() => setIsContactFormOpen(true)}
+              className={`relative w-44 h-12 bg-orange-500 hover:bg-orange-600 mt-6 transition-colors duration-200 text-white rounded-2xl text-sm font-medium flex items-center justify-center overflow-hidden ${footer.className}`}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             >
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="20" 
-                height="20" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
+              <motion.span
+                className={`flex items-center gap-2 transition-all duration-200 absolute ${
+                  isHovered ? 'opacity-0 -translate-x-5' : 'opacity-100 translate-x-0'
+                }`}
               >
-                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
-              </svg>
-            </Link>
-            <Link 
-              href="" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-orange-400 transition-colors"
-              aria-label="Instagram"
-            >
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="20" 
-                height="20" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              >
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
-              </svg>
-            </Link>
-            <Link 
-              href="" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-orange-400 transition-colors"
-              aria-label="LinkedIn"
-            >
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="20" 
-                height="20" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              >
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                <rect width="4" height="12" x="2" y="9"/>
-                <circle cx="4" cy="4" r="2"/>
-              </svg>
-            </Link>
-          </motion.div>
+                Schedule a call
+                <CalendarCheck size={20} />
+              </motion.span>
 
-          {/* Legal Links */}
-          <motion.div variants={containerVariants} className="flex flex-wrap gap-4 justify-center md:justify-end">
-            <motion.span variants={itemVariants}>
-              <Link href="/privacy-policy" className="hover:text-orange-400 transition-colors">Privacy Policy</Link>
-            </motion.span>
-            <motion.span variants={itemVariants}>
-              <Link href="/terms-of-service" className="hover:text-orange-400 transition-colors">Terms of Service</Link>
-            </motion.span>
-            <motion.span variants={itemVariants}>
-              <Link href="/disclaimer" className="hover:text-orange-400 transition-colors">Disclaimer</Link>
-            </motion.span>
-            <motion.span variants={itemVariants}>
-              <Link href="/cookie-policy" className="hover:text-orange-400 transition-colors">Cookie Policy</Link>
-            </motion.span>
+              <motion.span
+                className="absolute flex items-center justify-center"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{
+                  opacity: isHovered ? 1 : 0,
+                  y: isHovered ? 0 : 10,
+                  rotate: isHovered ? 45 : 0
+                }}
+                transition={{ duration: 0.2 }}
+              >
+                <CalendarCheck size={28} className="stroke-[2.5]" />
+              </motion.span>
+            </motion.button>
+          </motion.div>
+          
+          {/* Quick links section */}
+          <motion.div className={`${herofont.className} mt-12`} variants={itemVariants}>
+            <motion.h3 variants={itemVariants} className="text-white font-semibold mb-4 text-sm md:text-base">Quick links</motion.h3>
+            <motion.ul variants={containerVariants} className="space-y-2 text-sm">
+              <motion.li variants={itemVariants}>
+                <button
+                  onClick={() => scrollToSection('portfolio')}
+                  className="text-gray-300 hover:text-orange-400 transition-colors duration-200 font-semibold hover:underline underline-offset-4 decoration-orange-400 text-left w-full py-1"
+                >
+                  Portfolio
+                </button>
+              </motion.li>
+              <motion.li variants={itemVariants}>
+                <button
+                  onClick={() => scrollToSection('pricing')}
+                  className=" text-orange-400 hover:text-white transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400 text-left w-full py-1"
+                >
+                  Pricing
+                </button>
+              </motion.li>
+              <motion.li variants={itemVariants}>
+                <button 
+                  onClick={() => scrollToSection('how-it-works')}
+                  className="text-gray-300 hover:text-orange-400 transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400 text-left w-full py-1"
+                >
+                  How-It-Works
+                </button>
+              </motion.li>
+              <motion.li variants={itemVariants}>
+                <button
+                  onClick={() => scrollToSection('testimonials')}
+                  className="text-gray-300 hover:text-orange-400 transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400 text-left w-full py-1"
+                >
+                  Testimonials
+                </button>
+              </motion.li>
+              <motion.li variants={itemVariants}>
+                <button
+                  onClick={() => scrollToSection('faq')}
+                  className="text-gray-300 hover:text-orange-400 transition-colors duration-200 hover:underline underline-offset-4 decoration-orange-400 text-left w-full py-1"
+                >
+                  FAQ
+                </button>
+              </motion.li>
+            </motion.ul>
+          </motion.div>
+        </div>
+
+        {/* Bottom bar */}
+        <motion.div 
+          variants={containerVariants}
+          className={`max-w-7xl mx-auto border-t border-gray-700 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 ${footer.className}`}
+        >
+          <motion.p variants={itemVariants} className="mb-4 md:mb-0">&copy; 2025 Zentrova. All rights reserved.</motion.p>
+          
+          <motion.div variants={containerVariants} className="flex flex-col md:flex-row items-center gap-6">
+            {/* Social Media Links */}
+            <motion.div variants={itemVariants} className="flex mx-10 gap-8">
+              <Link 
+                href="https://twitter.com/yourusername" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-orange-400 transition-colors"
+                aria-label="Twitter"
+              >
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+                </svg>
+              </Link>
+              <Link 
+                href="" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-orange-400 transition-colors"
+                aria-label="Instagram"
+              >
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                </svg>
+              </Link>
+              <Link 
+                href="" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-orange-400 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect width="4" height="12" x="2" y="9"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </Link>
+            </motion.div>
+
+            {/* Legal Links */}
+            <motion.div variants={containerVariants} className="flex flex-wrap gap-4 justify-center md:justify-end">
+              <motion.span variants={itemVariants}>
+                <Link href="/privacy-policy" className="hover:text-orange-400 transition-colors">Privacy Policy</Link>
+              </motion.span>
+              <motion.span variants={itemVariants}>
+                <Link href="/terms-of-service" className="hover:text-orange-400 transition-colors">Terms of Service</Link>
+              </motion.span>
+              <motion.span variants={itemVariants}>
+                <Link href="/disclaimer" className="hover:text-orange-400 transition-colors">Disclaimer</Link>
+              </motion.span>
+              <motion.span variants={itemVariants}>
+                <Link href="/cookie-policy" className="hover:text-orange-400 transition-colors">Cookie Policy</Link>
+              </motion.span>
+            </motion.div>
           </motion.div>
         </motion.div>
-      </motion.div>
-    </motion.footer>
+      </motion.footer>
+
+      {/* Contact Form - Placed outside the footer at the root level */}
+      <ContactUsForm
+        isOpen={isContactFormOpen}
+        onClose={() => setIsContactFormOpen(false)}
+      />
+    </>
   );
 }
