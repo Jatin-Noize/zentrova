@@ -21,7 +21,7 @@ function Portfolio({id}) {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> 
           {/* Portfolio Item 1 */}
-          <div className="relative rounded-xl shadow-lg overflow-hidden aspect-video transition-all duration-300 hover:scale-[1.03]">
+          <div className="relative rounded-xl hover:shadow-orange-400  shadow-lg overflow-hidden aspect-video transition-all duration-300 hover:scale-[1.03]">
             <Image 
               src={img1}
               alt="Paywatch Project"
@@ -33,7 +33,7 @@ function Portfolio({id}) {
           </div>
 
           {/* Portfolio Item 2 */}
-          <div className="relative rounded-xl  shadow-lg overflow-hidden aspect-video transition-all duration-300 hover:scale-[1.03]">
+          <div className="relative rounded-xl hover:shadow-orange-400    shadow-lg overflow-hidden aspect-video transition-all duration-300 hover:scale-[1.03]">
             <Image 
               src={img2}
               alt="Flexible Payroll Project"
@@ -45,7 +45,7 @@ function Portfolio({id}) {
           </div>
 
           {/* Portfolio Item 3 */}
-          <div className="relative rounded-xl shadow-lg overflow-hidden aspect-video transition-all duration-300 hover:scale-[1.03]">
+          <div className="relative rounded-xl shadow-lg hover:shadow-orange-400 overflow-hidden aspect-video transition-all duration-300 hover:scale-[1.03]">
             <Image 
               src={img3}
               alt="AGILE Project"
@@ -57,7 +57,7 @@ function Portfolio({id}) {
           </div>
 
           {/* Portfolio Item 4 */}
-          <div className="relative rounded-xl shadow-lg overflow-hidden aspect-video transition-all duration-300 hover:scale-[1.03]">
+          <div className="relative rounded-xl shadow-lg hover:shadow-orange-400  overflow-hidden aspect-video transition-all duration-300 hover:scale-[1.03]">
             <Image 
               src={img4}
               alt="Always Adapt Project"

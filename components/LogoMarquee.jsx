@@ -11,7 +11,7 @@ import logo5 from "../public/images/logo5.webp";
 import logo6 from "../public/images/logo6.webp";
 import logo7 from "../public/images/logo7.webp";
 
-const logosRow1 = [logo1, logo2, logo3, logo4, logo5, logo6,logo7];
+const logosRow1 = [logo1, logo2, logo3,logo7, logo4, logo5, logo6];
 
 
 const scrollX = {

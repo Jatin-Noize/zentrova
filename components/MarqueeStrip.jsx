@@ -15,7 +15,7 @@ const footer = Michroma({
 
 const defaultMessagesTop = [
   {
-    text: " 3 Bespoke Logo Concepts — Delivered in 24H",
+    text: "3 Bespoke Logo Concepts — Delivered in 24H",
     icon: <FaRegSmileWink className="text-orange-300" />
   },
   {
