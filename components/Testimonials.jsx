@@ -7,6 +7,7 @@ import jessica from "../public/images/jessica.webp";
 import Image from 'next/image';
 import jenny from "../public/images/jenny.webp";
 import laila from "../public/images/laila.webp";
+import john from "../public/images/john.webp";
 
 
 import { Star, StarHalf, Star as StarEmpty } from "lucide-react"; 
@@ -144,7 +145,13 @@ const Testimonials = ({id}) => {
           </blockquote>
           <div className="flex items-center">
             <div className="rounded-full w-10 h-10 flex items-center justify-center text-white font-bold text-lg mr-3 overflow-hidden">
-             
+               <Image 
+                src={john} 
+                alt="John Danes" 
+                width={40} 
+                height={40} 
+                className="object-cover"
+              />
             </div>
             <div>
               <p className="font-bold text-sm">John Danes</p>
