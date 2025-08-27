@@ -205,7 +205,7 @@ export default function Footer() {
                 </svg>
               </Link>
               <Link 
-                href="" 
+                href="https://www.instagram.com/zentrova_agency?igsh=MTR0dTI4eDBweGwyZg%3D%3D&utm_source=qr " 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-orange-400 transition-colors"

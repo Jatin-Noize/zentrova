@@ -99,7 +99,7 @@ const PricingComponent = ({ id }) => {
 >
   <div className="flex flex-col h-full">
     <div className="mb-6 border-b-2 pb-6 border-orange-400">
-      <h2 className="text-4xl md:w-xs font-semibold text-left uppercase flex justify-between text-black mb-1">Logo & Brand Style Guide <span className='text-orange-400 mr-4'>$385</span></h2>
+      <h2 className="text-4xl md:w-xs font-semibold text-left uppercase flex justify-between text-black mb-1">Logo & Brand Style Guide <span className='text-orange-400 mr-4'>$405</span></h2>
      
       <p className={`text-zinc-400 mt-6 text-left  text-sm ${font2.className}`}>
         3 concepts, market research, digital and print files, and an 18-page style guide.
@@ -164,7 +164,7 @@ const PricingComponent = ({ id }) => {
 >
   <div className="flex flex-col h-full">
     <div className="mb-6 border-b-2 pb-6 border-orange-400">
-      <h2 className="text-4xl  text-left flex md:w-xs justify-between font-semibold text-black mb-1">3 LOGO CONCEPTS <br /> <br /> <span className='text-orange-400 mr-4'>$225</span></h2>
+      <h2 className="text-4xl  text-left flex md:w-xs justify-between font-semibold text-black mb-1">3 LOGO CONCEPTS <br /> <br /> <span className='text-orange-400 mr-4'>$245</span></h2>
       
     
       <p className={`text-zinc-400 mt-6 text-left  text-sm ${font2.className}`}>
@@ -229,7 +229,7 @@ const PricingComponent = ({ id }) => {
 >
   <div className="flex flex-col h-full">
     <div className="mb-6 border-b-2 pb-6 border-orange-400">
-      <h2 className="text-4xl  text-left flex justify-between md:w-xs font-semibold text-black mb-1">2 LOGO CONCEPTS <br /><br /> <span className='text-orange-400 mr-4'>$159</span></h2>
+      <h2 className="text-4xl  text-left flex justify-between md:w-xs font-semibold text-black mb-1">2 LOGO CONCEPTS <br /><br /> <span className='text-orange-400 mr-4'>$179</span></h2>
       
     
       <p className={`text-zinc-400 mt-6 text-left  text-sm ${font2.className}`}>

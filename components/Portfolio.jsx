@@ -3,8 +3,8 @@ import { Inter, Bebas_Neue } from 'next/font/google';
 import Image from 'next/image';
 import img1 from "../public/images/test1.webp";
 import img2 from "../public/images/test2.webp";
-import img3 from "../public/images/test3.webp";
-import img4 from "../public/images/test4.webp";
+import img4 from "../public/images/test3.webp";
+import img3 from "../public/images/test4.webp";
 
 const head = Bebas_Neue({  
   weight: "400",
