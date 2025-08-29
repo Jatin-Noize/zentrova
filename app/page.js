@@ -26,7 +26,7 @@ const PricingComponent = dynamic(() => import('@/components/PricingComponent'));
 const FAQSection = dynamic(() => import('@/components/FAQSection'));
 
 const ContactUsForm = dynamic(() => import('@/components/ContactUsForm'));
-const Founder = dynamic(() => import('@/components/Founder'));
+
 const Portfolio = dynamic(() => import('@/components/Portfolio'));
 const HowItWorks = dynamic(() => import('@/components/HowItWorks'));
 const Testimonials = dynamic(() => import('@/components/Testimonials'));
@@ -182,9 +182,7 @@ const Page = () => {
             <CounterSection />
           </AnimatedSection>
           
-          <AnimatedSection>
-            <Founder id="about" />
-          </AnimatedSection>
+       
           
           <AnimatedSection>
             <AnimatedQuote />

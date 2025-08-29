@@ -64,7 +64,7 @@ export default function HeroSection() {
       className={`${herofont.className} text-5xl mt-8 mb-4 sm:text-8xl md:text-5xl lg:text-7xl tracking-tight font-extrabold text-left sm:text-center`}
     >
       THE GO-TO <br className="sm:hidden" />
-      <span className={`text-[#F56F10] ${herofont.className}`}>WHITE LABEL</span>
+      <span className={`text-[#F56F10] ${herofont.className}`}>WHITE LABEL{" "}</span>
       <br className="sm:hidden" />
       <span className="block sm:inline">
         Logo Partner for <br className="sm:hidden" />

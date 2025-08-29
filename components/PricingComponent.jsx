@@ -99,7 +99,7 @@ const PricingComponent = ({ id }) => {
 >
   <div className="flex flex-col h-full">
     <div className="mb-6 border-b-2 pb-6 border-orange-400">
-      <h2 className="text-4xl md:w-xs font-semibold text-left uppercase flex justify-between text-black mb-1">Logo & Brand Style Guide <span className='text-orange-400 mr-4'>$405</span></h2>
+      <h2 className="text-4xl md:w-xs font-semibold text-left uppercase flex justify-between text-black mb-1">Logo & Brand Style Guide <span className='text-orange-400 mr-4'>$390</span></h2>
      
       <p className={`text-zinc-400 mt-6 text-left  text-sm ${font2.className}`}>
         3 concepts, market research, digital and print files, and an 18-page style guide.
