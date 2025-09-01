@@ -91,7 +91,8 @@ export default function Footer() {
               </Link>
             </div>
             <motion.p variants={itemVariants} className={`text-sm text-gray-400 mb-6 ${footer.className}`}>
-              Get your agency aligned with Zentrova quality service at the best price
+              Get your agency aligned with Zentrova quality service at the best price <br />
+             <p className='text-gray-500 text-md'>info@zentrovaofficial.com</p>
             </motion.p>
             <motion.button
               whileHover={{ scale: 1.05 }}
